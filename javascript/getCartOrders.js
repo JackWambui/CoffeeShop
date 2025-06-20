@@ -22,6 +22,15 @@ window.addEventListener("DOMContentLoaded",updateCartNumber);
 
 const ordersFeaturesContainer = document.querySelector(".ordersFeatures");
 
+/*Look into this code
+  <th>
+    Product No
+  </th>
+  <td>
+    ${productId}
+  </td>
+*/
+
 if(ordersFeaturesContainer){
     const tableElement = document.createElement("table");
     tableElement.classList.add("js-table");
@@ -35,10 +44,7 @@ if(ordersFeaturesContainer){
         <thead>
             <tr>
                 <th>
-                    Order
-                </th>
-                <th>
-                    Product No
+                    Order No
                 </th>
                 <th>
                     Image
@@ -47,13 +53,13 @@ if(ordersFeaturesContainer){
                     Name
                 </th>
                 <th>
-                    Price
+                    Product Price
                 </th>
                 <th>
                     Quantity
                 </th>
                 <th>
-                    Amount Due
+                    Amount
                 </th>
                 <th>
                     Action
@@ -64,12 +70,17 @@ if(ordersFeaturesContainer){
     const tBody = document.createElement("tbody");
     tBody.classList.add("js-cart-tbody");
     tableElement.append(tBody);
+    let totalAmountDue = 0;
     ordersInformation.forEach(function(ord,index){
         let productPricing = ord.price;
         let productQuantities = ord.quantity;
         let totalPriceDue = (productPricing * productQuantities).toFixed(2);
+        let totalPriceNum = parseFloat(totalPriceDue);
         let productNam = ord.name;
         let productId = ord.id;
+
+        totalAmountDue = totalAmountDue + totalPriceNum;
+        // console.log("Amount Due",typeof totalAmountDue);
 
         const trElement = document.createElement("tr");
         trElement.setAttribute("data-id",productId);
@@ -77,9 +88,6 @@ if(ordersFeaturesContainer){
         trElement.innerHTML = `
             <td>
                 ${index = index + 1}
-            </td>
-            <td>
-                ${productId}
             </td>
             <td>
                 <img src="${ord.image}" alt=${productNam}>
@@ -111,7 +119,7 @@ if(ordersFeaturesContainer){
         `;
         tBody.append(trElement);
         });
-
+        // console.log("Amount Due",totalAmountDue);
         // console.log(ordersFeaturesContainer);
         // testApp(ordersFeaturesContainer);
 
@@ -120,9 +128,9 @@ if(ordersFeaturesContainer){
         const additionalCartDivEl = document.createElement("div");
         additionalCartDivEl.classList.add("div-footer");
         additionalCartDivEl.innerHTML = `
-            <div>
-                Total Price:
-                <span class="js-total-order-price"></span>
+            <div class="price-js">
+                <b>Total Price:</b> $
+                <span class="js-total-order-price">${(totalAmountDue).toFixed(2)}</span>
             <div>
             <div class="js-shopping-cart-button-container">
                 <button class="submit-btn btn-success js-btn-1">
@@ -142,7 +150,9 @@ if(ordersFeaturesContainer){
             const targetEl = event.target;
 
             if(targetEl.classList.contains("submit-btn")){
-                console.log("order submitted.")
+                const orderPaymentContainer = document.querySelector(".js-order-payments");
+                orderPaymentContainer.classList.remove("js-class-none");
+                // console.log("order submitted.")
             }else if(targetEl.classList.contains("clear-btn")){
                 clearShoppingCartDetails();
                 updateCartPageDetails();
@@ -151,6 +161,24 @@ if(ordersFeaturesContainer){
         }
 
         shoppingCartBtnCont.addEventListener("click",handleShoppingAction);
+
+        const cartTableBody = document.querySelector(".js-cart-tbody");
+
+        function performEditOrDeleteAction(event){
+            const targetElement = event.target;
+            let targetParentElement = targetElement.parentElement.parentElement;
+            const tableRowId = parseInt(targetParentElement.getAttribute("data-id"),10);
+            // console.log(tableRowId); 
+            if(targetElement.classList.contains("edit-button")){
+                // console.log("edit");
+            }else if(targetElement.classList.contains("delete-button")){
+                // console.log("delete order");
+                targetParentElement.remove();
+                updateShoppingCartLocalStorage(tableRowId);
+            }
+        }
+
+        cartTableBody.addEventListener("click",performEditOrDeleteAction);
     }else{
         updateCartPageDetails();
         // const emptyCartH2El = document.createElement("h2");
@@ -159,8 +187,10 @@ if(ordersFeaturesContainer){
     }
 }
 
+
 function clearShoppingCartDetails(){
-   localStorage.clear();
+    //localStorage.clear();
+   localStorage.removeItem("cart");
    window.location.reload();
 }
 
@@ -169,41 +199,48 @@ function checkShoppingCartNotEmpty(){
 }
 // console.log(typeof checkShoppingCartNotEmpty());
 
+//Try Again
+function updateShoppingCartLocalStorage(orderId){
+    const getCart = getShoppingCartDetails();
+    // console.log(getCart);
+    let newCart = getCart.filter(function(crt){
+        if(crt.id !== orderId){
+            return crt;
+        }
+    });
+
+    localStorage.setItem("cart",JSON.stringify(newCart));
+    window.location.reload();    
+}
+
 function updateCartPageDetails(){
     const emptyCartH2El = document.createElement("h2");
     emptyCartH2El.innerText = "The Cart is empty,Please go ahead and shop.";
     ordersFeaturesContainer.append(emptyCartH2El);   
 }
 
-const cartTableBody = document.querySelector(".js-cart-tbody");
+// const cartTableBody = document.querySelector(".js-cart-tbody");
 
-function performEditOrDeleteAction(event){
-    const targetElement = event.target;
-    let targetParentElement = targetElement.parentElement.parentElement;
-    const tableRowId = parseInt(targetParentElement.getAttribute("data-id"),10);
-    console.log(tableRowId);
+// function performEditOrDeleteAction(event){
+//     const targetElement = event.target;
+//     let targetParentElement = targetElement.parentElement.parentElement;
+//     const tableRowId = parseInt(targetParentElement.getAttribute("data-id"),10);
+//     console.log(tableRowId);
             
-    if(targetElement.classList.contains("edit-button")){
-        console.log("edit");
-    }else if(targetElement.classList.contains("delete-button")){
-        console.log("delete order");
-        targetParentElement.remove();
-        updateShoppingCartLocalStorage(tableRowId);
-    }
-}
+//     if(targetElement.classList.contains("edit-button")){
+//         console.log("edit");
+//     }else if(targetElement.classList.contains("delete-button")){
+//         console.log("delete order");
+//         targetParentElement.remove();
+//         updateShoppingCartLocalStorage(tableRowId);
+//     }
+// }
 
-//Try Again
-function updateShoppingCartLocalStorage(orderId){
-    getShoppingCartDetails().forEach(function(testId,testIndex){
-        if(testId.id === orderId){
-            // console.log(`${testId.name}`);
-            console.log(localStorage.remove(testIndex));
-            // getShoppingCartDetails().splice(testIndex,1);
-        }
-    });
-}
+// cartTableBody.addEventListener("click",performEditOrDeleteAction);
 
-cartTableBody.addEventListener("click",performEditOrDeleteAction);
+
+
+
 
 
 

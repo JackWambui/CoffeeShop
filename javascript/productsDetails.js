@@ -43,28 +43,28 @@ const products = [
             stars:4.6
         }
     },
-    /*{
-        id:5,
-        name:"Cappuccino",
-        image:"https://images.unsplash.com/photo-1534687941688-651ccaafbff8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FwcHVjY2lub3xlbnwwfHwwfHx8MA%3D%3D",
-        category:1,
-        price:"4.00",
-        ratings:{
-            count:300,
-            stars:4.2
-        }
-    },
-    {
-        id:6,
-        name:"Expresso",
-        image:"https://images.unsplash.com/photo-1596952954288-16862d37405b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXhwcmVzc298ZW58MHx8MHx8fDA%3D",
-        category:1,
-        price:"7.00",
-        ratings:{
-            count:1200,
-            stars:4.8
-        }
-    },
+    // {
+    //     id:5,
+    //     name:"Cappuccino",
+    //     image:"https://images.unsplash.com/photo-1534687941688-651ccaafbff8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FwcHVjY2lub3xlbnwwfHwwfHx8MA%3D%3D",
+    //     category:1,
+    //     price:"4.00",
+    //     ratings:{
+    //         count:300,
+    //         stars:4.2
+    //     }
+    // },
+    // {
+    //     id:6,
+    //     name:"Expresso",
+    //     image:"https://images.unsplash.com/photo-1596952954288-16862d37405b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXhwcmVzc298ZW58MHx8MHx8fDA%3D",
+    //     category:1,
+    //     price:"7.00",
+    //     ratings:{
+    //         count:1200,
+    //         stars:4.8
+    //     }
+    // },
     {
         id:7,
         name:"Chocolate Cake",
@@ -75,49 +75,38 @@ const products = [
             count:2000,
             stars:4.7
         }
-    }*/,
+    },
     {
         id:8,
         name:"Red Velvet Cake",
         image:"https://plus.unsplash.com/premium_photo-1713920189815-876dbdf5f56e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UmVkJTIwVmVsdmV0JTIwQ2FrZXxlbnwwfHwwfHx8MA%3D%3D",
         category:2,
-        price:"4.29",
+        price:"6.99",
+        ratings:{
+            count:2400,
+            stars:4.75
+        }
+    },
+    {
+        id:9,
+        name:"Vanilla Cake",
+        image:"https://plus.unsplash.com/premium_photo-1663839331055-d0c9bcb2929f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VmFuaWxsYSUyMENha2V8ZW58MHx8MHx8fDA%3D",
+        category:2,
+        price:"4.50",
         ratings:{
             count:200,
-            stars:4.9
-        }
-    },
-	{
-        id:9,
-        name:"Chiffon Cake",
-        image:"https://plus.unsplash.com/premium_photo-1663839331317-934171594efc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hpZmZvbiUyMENha2V8ZW58MHx8MHx8fDA%3D",
-        category:2,
-        price:"5.29",
-        ratings:{
-            count:1200,
-            stars:4.5
-        }
-    },
-	{
-        id:10,
-        name:"Biscuit Cake",
-        image:"https://images.unsplash.com/photo-1745427908327-bb4b100d6809?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QmlzY3VpdCUyMENha2V8ZW58MHx8MHx8fDA%3D",
-        category:2,
-        price:"5.80",
-        ratings:{
-            count:800,
-            stars:4.7
-        }
-    },
-	{
-        id:11,
-        name:"Carrot Cake",
-        image:"https://plus.unsplash.com/premium_photo-1714669899928-eb0b28430295?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2Fycm90JTIwQ2FrZXxlbnwwfHwwfHx8MA%3D%3D",
-        category:2,
-        price:"3.80",
-        ratings:{
-            count:1200,
             stars:4.4
+        }
+    },
+    {
+        id:10,
+        name:"Black Forest Cake",
+        image:"https://plus.unsplash.com/premium_photo-1715178982048-d36eba937bc2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmxhY2slMjBGb3Jlc3QlMjBDYWtlfGVufDB8fDB8fHww",
+        category:2,
+        price:"5.99",
+        ratings:{
+            count:400,
+            stars:4.6
         }
     }
 ];
