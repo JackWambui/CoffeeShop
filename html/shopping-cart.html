@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Cup of Inspiration | Coffee Shop</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/menuStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/menuStyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="js-shopping-cart-body">
@@ -13,15 +13,15 @@
         <nav>
             <div class="logo">
                 <a href="#">
-                    <img src="../images/logo.jpeg" alt="A Cup of Inspiration">
+                    <img src="/images/logo.jpeg" alt="A Cup of Inspiration">
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="../html/index.html">HOME</a></li>
-                <li><a href="../html/about.html">ABOUT US</a></li>
-                <li><a href="../html/menu.html">MENU</a></li>
-                <li><a href="../html/contactUs.html">CONTACT US</a></li>
-                <li><a href="../html/Create_Account.html" class="btn">Create Account</a></li>
+                <li><a href="/html/index.html">HOME</a></li>
+                <li><a href="/html/about.html">ABOUT US</a></li>
+                <li><a href="/html/menu.html">MENU</a></li>
+                <li><a href="/html/contactUs.html">CONTACT US</a></li>
+                <li><a href="/html/Create Account.html" class="btn">Create Account</a></li>
                 <li>
                     <a href="#">
                        <i class="fa-solid fa-cart-shopping order-cart">
@@ -52,7 +52,7 @@
         </div>
     </section> -->
     
-    <section class="shopping-cart-features">
+    <section class="container shopping-cart-features">
         <h1>
            Shopping Cart
         </h1>
@@ -62,6 +62,59 @@
         <div class="ordersFeatures">
        
         </div>
+    </section>
+    <section class="container js-order-payments js-class-none" id="js-order-payments">
+        <div class="orders-payments-header">
+            <h3>
+                Payment Form
+            </h3>
+        </div>
+        <!--Turn off autocomplete-->
+        <form id="form-payments" class="js-form-payments" autocomplete="on">
+            <div class="form-control payments-options-radios">
+                <label for="paymentOptions">
+                    <b>Payment Methods</b>
+                </label>
+                <div class="radios-options">
+                    <div class="radio-option">
+                        <input type="radio" id="paymentOptions" name="paymentOptionsInput" class="js-payment-options" value="MasterCard">
+                        <label for="paymentOptions">MasterCard</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="paymentOptions" name="paymentOptionsInput" class="js-payment-options" value="VISA">
+                        <label for="paymentOptions">VISA</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="paymentOptions" name="paymentOptionsInput" class="js-payment-options" value="PayPal">
+                        <label for="paymentOptions">PayPal</label>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="form-control first-name">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstNameInput" class="js-first-name">
+            </div>
+            <div class="form-control">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastNameInput" class="js-last-name">
+            </div>
+            <div class="form-control">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumberInput" class="js-card-number" placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="form-control">
+                <label for="securityCode">Security Code</label>
+                <input type="text" id="securityCode" name="securityCodeInput" class="js-security-code" placeholder="000">
+            </div>
+            <div class="form-control">
+                <label for="cardExpiration">Card Expiration</label>
+                <input type="text" id="cardExpiration" name="cardExpirationInput" class="js-card-expiration" placeholder="MM/YY">
+            </div>
+            <div class="form-control submit-payment-btn">
+                <input type="submit"  class="btn-primary js-submit-payment-details-btn" value="Complete Payment">
+            </div>
+        </form>
     </section>
     </main>
 
@@ -83,9 +136,10 @@
         </div>
     </footer>
 
-    <script src="../javascript/script.js"></script>
-    <!-- <script src="../javascript/productsDetails.js"></script> -->
-    <script src="../javascript/getCartOrders.js"></script>
-    <!-- <script src="../javascript/categoryScript.js"></script> -->
+    <script src="/javascript/script.js"></script>
+    <!-- <script src="/javascript/productsDetails.js"></script> -->
+    <script src="/javascript/getCartOrders.js"></script>
+    <!-- <script src="/javascript/categoryScript.js"></script> -->
+    <script src="/javascript/paymentScript.js"></script>
 </body>
 </html>
