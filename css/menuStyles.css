@@ -30,6 +30,13 @@ section h1{
     margin-bottom:16px;
 }
 
+/*Refactor Code*/
+.productsFeatures{
+    grid-template-columns: repeat(3,1fr);
+    /* grid-template-rows: 400px; */
+    margin-bottom:16px;
+}
+
 .card {
     box-shadow:0 2px 2px #ccc;
     border-radius:8px;
@@ -243,7 +250,7 @@ section h1{
 .shopping-cart-features{
     max-width:1200px;
     margin:0 auto;
-    padding:8px 16px;
+    /* padding:8px 16px; */
 }
 
 .js-table img{
@@ -281,7 +288,7 @@ table{
 
 table th,
 table td{
-    padding:8px 16px;
+    padding:8px;
     text-align:center;
 }
 
@@ -327,6 +334,109 @@ table td{
     padding:16px;
 }
 
+.price-js{
+    text-align:center;
+    /* margin-bottom:24px; */
+}
+
+.alert-messages{
+    width:320px;
+    padding:16px;
+    text-align:center;
+}
+
+.success{
+    background-color:green;
+    color:#fff;
+}
+
+.error{
+    background-color:red;
+    color:#fff;
+}
+
+.js-order-payments{
+    max-width:800px;
+    margin:48px auto 16px;
+    border:1px solid #ccc;
+    background-color:#f7f7f7;
+    padding:16px 8px;
+    box-shadow:0 2px 2px #969696;
+    /* display:none; */
+}
+
+.js-form-payments{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:16px;
+    padding:16px;
+}
+
+.js-form-payments .form-control label{
+    font-weight:600;
+}
+
+.js-form-payments input[type="text"],
+.js-form-payments input[type="number"]
+{
+    width: 100%;
+    padding:8px 16px;
+    height:40px;
+}
+
+.js-form-payments input[type="text"]:focus{
+    outline:none;
+    background-color:linen;
+}
+
+.payments-options-radios{
+    grid-column:1 / span 2;
+}
+
+.radios-options{
+    display:flex;
+    flex-direction:row;
+    align-items: flex-start;
+    gap:24px;
+    padding:8px 0;
+}
+
+.radios-options .radio-option{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:8px;
+}
+
+/* .ordersFeatures{
+  max-width:400px;
+} */
+
+.orders-payments-header h3{
+    text-align:center;
+    font-size:32px;
+}
+
+.submit-payment-btn{
+    grid-column:1 /span 2;
+}
+
+.js-submit-payment-details-btn{
+    padding:14px 16px;
+    background-color:#72AD21;
+    color:#fff;
+    border:0;
+    font-size:17px;
+}
+
+.js-class-none{
+    display:none;
+}
+
+.js-class-block{
+    display:block;
+}
 
 @media only screen and (max-width:767px){
     .secondary-nav .secondary-items{
@@ -369,6 +479,10 @@ table td{
         font-size:20px;
         text-align:center;
     }
+
+    /* .shopping-cart-features table th:nth-child(4){
+        display:none;
+    } */
 }
 
 
@@ -405,6 +519,10 @@ table td{
     .categoriesFeatures{
         grid-template-columns: repeat(3,1fr);
     }
+
+    /* .categoriesFeatures img{
+        height:280px;
+    } */
 
     .productTest{
         grid-template-columns: repeat(4,1fr);
