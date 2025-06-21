@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Control Center | A Cup of Inspiration</title>
+    <title>Admin Dashboard | A Cup of Inspiration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -19,6 +19,8 @@
             --accent: #d7ccc8;
             --light: #efebe9;
             --dark: #3e2723;
+            --coffee: #6f4e37;
+            --latte: #c0a080;
             --sidebar-width: 250px;
             --header-height: 70px;
         }
@@ -448,7 +450,7 @@
     <!-- Admin Header -->
     <header class="admin-header">
         <div class="logo-container">
-            <img src="https://via.placeholder.com/50/5d4037/ffffff?text=CI" alt="A Cup of Inspiration">
+             <img src="../images/logo.jpeg" alt="A Cup of Inspiration">
             <h1>Admin Control Center</h1>
         </div>
         <nav class="admin-nav">
@@ -674,8 +676,7 @@
             if(logoutBtn) {
                 logoutBtn.addEventListener('click', function() {
                     if(confirm('Are you sure you want to log out?')) {
-                        // In a real app, this would redirect to login page
-                        alert('You have been logged out successfully.');
+                        // Redirect to login page
                         window.location.href = 'admin_login.html';
                     }
                 });
