@@ -205,13 +205,24 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
-
+/*
 .stat-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
+    */
+
+
+.stat-header {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;     /* Center-align items horizontally */
+    text-align: center;      /* Ensure text is centered */
+}
+
+
 
 .stat-title {
     font-size: 1.1rem;
@@ -229,6 +240,7 @@ body {
     font-size: 1.5rem;
     background-color: var(--accent);
     color: var(--primary);
+    margin-bottom: 8px;      /* Add space between icon and text */
 }
 
 .stat-value {
