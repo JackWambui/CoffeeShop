@@ -127,4 +127,37 @@ form.signup button[type="submit"]:hover {
 
 
 
+@media (max-width: 768px) {
+    html, body {
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .container {
+        position: static; /* Override only for small screens */
+        display: block;
+        overflow: visible;
+        margin: 20px auto;
+    }
+
+    .overlay {
+        position: static;
+        transform: none;
+        width: 95%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container img {
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
 
