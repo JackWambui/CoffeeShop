@@ -125,6 +125,24 @@ form.signup button[type="submit"]:hover {
     background-color: #5a3d2b;
 }
 
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 30px;
+}
+
+.password-wrapper .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
 
 
 @media (max-width: 768px) {
