@@ -26,10 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             // Basic validation
-            if (!username || !firstName || !lastName || !email || !password || !confirmPassword) {
-                alert("Please fill in all the fields.");
-                return;
-            }
+            //Remember to add the other columns to above code
+            // if (!username || !firstName || !lastName || !email || !password || !confirmPassword) {
+            //     alert("Please fill in all the fields.");
+            //     return;
+            // }
 
             // Email format check (basic)
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
