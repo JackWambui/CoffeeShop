@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const password = signupForm.Password.value;
             const confirmPassword = signupForm["Confirm Password"].value;
 
+
             // Basic validation
             if (!username || !firstName || !lastName || !email || !password || !confirmPassword) {
                 alert("Please fill in all the fields.");
@@ -81,4 +82,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // (Your existing signup and signin validation code can follow here)
+    
 });
+
+
+async function postCustomerInfor(){
+    const urlCustomerLink = "../php/CreateAccount.php";
+
+    const response = await fetch(urlCustomerLink);
+
+    const responseData = await response.json();
+
+    console.log(responseData);
+}
+
+postCustomerInfor();
