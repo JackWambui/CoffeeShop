@@ -1,10 +1,12 @@
  //Variable declaration
-const username = signupForm.username.value.trim();
-const firstName = signupForm["First Name"].value.trim();
-const lastName = signupForm["Last Name"].value.trim();
-const email = signupForm.Email.value.trim();
-const password = signupForm.Password.value;
-const confirmPassword = signupForm["Confirm Password"].value;
+// const username = signupForm.username.value.trim();
+
+//Getting data from html form to javascript
+const firstName = document.querySelector(".firstName").value.trim();
+const lastName = document.querySelector(".lastName").value.trim();
+// const email = signupForm.Email.value.trim();
+// const password = signupForm.Password.value;
+// const confirmPassword = signupForm["Confirm Password"].value;
 
 // Wait until the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
