@@ -4,8 +4,8 @@
     header("Content-Type:application/json");
 
     //Gets the type of method being sent in the api
-    // $requestType = $_SERVER["REQUEST_METHOD"];
-    $requestType = "POST";
+    $requestType = $_SERVER["REQUEST_METHOD"];
+    // $requestType = "POST";
     
     $message;
     if($requestType === "POST"){
@@ -18,7 +18,7 @@
         $customerFirstNameDB = $jsonData["firstNamePHP"];
         // $message = $customerFirstNameDB;
         $sql = "INSERT INTO customers (customer_fname)
-        VALUES ('test')";
+        VALUES ('$customerFirstNameDB')";
 
         //Dont use conn instead use connection
         if ($connection->query($sql) === TRUE) {
