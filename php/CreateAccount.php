@@ -16,8 +16,8 @@
 
         $customerFirstNameDB = $jsonData["firstNamePHP"];
         // $message = $customerFirstNameDB;
-        $sql = "INSERT INTO customers (customer_fname, customer_lname)
-        VALUES ('John', 'Doe', 'john@example.com')";
+        $sql = "INSERT INTO customers (customer_fname)
+        VALUES ($customerFirstNameDB)";
 
         //Dont use conn instead use connection
         if ($connection->query($sql) === TRUE) {
