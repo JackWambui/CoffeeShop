@@ -9,7 +9,7 @@
     if($connection->connect_error){
         die("Connection failed".$connection->connect_error);
     }
-    // else{
-    //     echo "Connected successfully to the ".$databaseName." database.";
-    // }
+    else{
+        echo "Connected successfully to the ".$databaseName." database.";
+    }
 ?>
