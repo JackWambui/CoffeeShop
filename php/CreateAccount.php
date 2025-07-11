@@ -15,16 +15,16 @@
         // $message = $jsonData;
 
         $customerFirstNameDB = $jsonData["firstNamePHP"];
-        $message = $customerFirstNameDB;
-        // $sql = "INSERT INTO customers (customer_fname, customer_lname)
-        // VALUES ('John', 'Doe', 'john@example.com')";
+        // $message = $customerFirstNameDB;
+        $sql = "INSERT INTO customers (customer_fname, customer_lname)
+        VALUES ('John', 'Doe', 'john@example.com')";
 
-        // //Dont use conn instead use connection
-        // if ($connection->query($sql) === TRUE) {
-        // echo "New record created successfully";
-        // } else {
-        // echo "Error: " . $sql . "<br>" . $conn->error;
-        // }
+        //Dont use conn instead use connection
+        if ($connection->query($sql) === TRUE) {
+            $message = "New record created successfully";
+        } else {
+            $message = "Error";
+        }
     }
     
     $array = array(
