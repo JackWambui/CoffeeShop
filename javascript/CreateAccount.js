@@ -127,6 +127,27 @@ async function postCustomerInfor(){
         lastNamePHP:lastName,
     };
 
+//     document.addEventListener("DOMContentLoaded", () => {
+//     const toggleIcons = document.querySelectorAll(".toggle-password");
+
+//     toggleIcons.forEach(icon => {
+//         icon.addEventListener("click", () => {
+//             const inputSelector = icon.getAttribute("toggle");
+//             const passwordInput = document.querySelector(inputSelector);
+
+//             if (passwordInput) {
+//                 const type = passwordInput.type === "password" ? "text" : "password";
+//                 passwordInput.type = type;
+
+//                 // Toggle icon class
+//                 icon.classList.toggle("fa-eye");
+//                 icon.classList.toggle("fa-eye-slash");
+//             }
+//         });
+//     });
+// });
+
+
     // console.log(customerInformationObject);
 
 
