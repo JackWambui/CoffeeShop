@@ -127,7 +127,7 @@ async function postCustomerInfor(){
         lastNamePHP:lastName,
     };
 
-    console.log(customerInformationObject);
+    // console.log(customerInformationObject);
 
 
     const urlCustomerLink = "../php/CreateAccount.php";
