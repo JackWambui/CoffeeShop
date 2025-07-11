@@ -4,7 +4,8 @@
     header("Content-Type:application/json");
 
     //Gets the type of method being sent in the api
-    $requestType = $_SERVER["REQUEST_METHOD"];
+    // $requestType = $_SERVER["REQUEST_METHOD"];
+    $requestType = "POST";
     
     $message;
     if($requestType === "POST"){
