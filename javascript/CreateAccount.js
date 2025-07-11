@@ -1,17 +1,19 @@
- //Variable declaration
-const firstName = document.querySelector(".firstName").value.trim();
-// console.log(firstName);
-const lastName = document.querySelector(".lastName").value.trim();
-const email = document.querySelector(".Email").value.trim();
-const password = document.querySelector(".password").value.trim();
-const confirmPassword = document.querySelector(".confirmPassword").value.trim();
+
+
 const btnSigninBtn = document.querySelector(".sign_in_btn");
 
 function handleCustomerInformation(event){
     event.preventDefault();
+     //Variable declaration
+    const firstName = document.querySelector(".firstName").value.trim();
     console.log(firstName);
+    // const lastName = document.querySelector(".lastName").value.trim();
+    // const email = document.querySelector(".Email").value.trim();
+    // const password = document.querySelector(".password").value.trim();
+    // const confirmPassword = document.querySelector(".confirmPassword").value.trim();
+    // console.log(firstName);
     //Calling our Api here
-    postCustomerInfor();
+    // postCustomerInfor();
 }
 btnSigninBtn.addEventListener("click",handleCustomerInformation);
 //Getting data from html form to javascript
