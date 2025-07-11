@@ -4,7 +4,7 @@
 //Getting data from html form to javascript
 const firstName = document.querySelector(".firstName").value.trim();
 const lastName = document.querySelector(".lastName").value.trim();
-const email = document.querySelector(".email").value.trim();
+const email = document.querySelector(".Email").value.trim();
 const password = document.querySelector(".password").value.trim();
 const confirmPassword = document.querySelector(".confirmPassword").value.trim();
 
