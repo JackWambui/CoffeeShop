@@ -1,3 +1,11 @@
+ //Variable declaration
+const username = signupForm.username.value.trim();
+const firstName = signupForm["First Name"].value.trim();
+const lastName = signupForm["Last Name"].value.trim();
+const email = signupForm.Email.value.trim();
+const password = signupForm.Password.value;
+const confirmPassword = signupForm["Confirm Password"].value;
+
 // Wait until the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
     // SIGNUP FUNCTIONALITY
@@ -6,12 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
         signupForm.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            const username = signupForm.username.value.trim();
-            const firstName = signupForm["First Name"].value.trim();
-            const lastName = signupForm["Last Name"].value.trim();
-            const email = signupForm.Email.value.trim();
-            const password = signupForm.Password.value;
-            const confirmPassword = signupForm["Confirm Password"].value;
+            // //Variable declaration
+            // const username = signupForm.username.value.trim();
+            // const firstName = signupForm["First Name"].value.trim();
+            // const lastName = signupForm["Last Name"].value.trim();
+            // const email = signupForm.Email.value.trim();
+            // const password = signupForm.Password.value;
+            // const confirmPassword = signupForm["Confirm Password"].value;
 
 
             // Basic validation
@@ -32,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Passwords do not match.");
                 return;
             }
-
+            //Calling our Api here
+            postCustomerInfor();
             // Simulate success
             alert(`Account created successfully!\nWelcome, ${firstName}!`);
             signupForm.reset();
@@ -85,15 +95,27 @@ document.addEventListener("DOMContentLoaded", () => {
     
 });
 
-
+//Api Connection for sending data to php file from javaScript above
 async function postCustomerInfor(){
-    const urlCustomerLink = "../php/CreateAccount.php";
+    const customerInformationObject = {
+        firstNamePHP:firstName,
+        lastNamePHP:lastName,
+    };
 
-    const response = await fetch(urlCustomerLink);
+
+    const urlCustomerLink = "../php/CreateAccount.php";
+    //Gets the fetch api response
+    const response = await fetch(urlCustomerLink,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(customerInformationObject)
+    });
 
     const responseData = await response.json();
 
     console.log(responseData);
 }
 
-postCustomerInfor();
+
