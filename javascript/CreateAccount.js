@@ -110,6 +110,8 @@ async function postCustomerInfor(){
         lastNamePHP:lastName,
     };
 
+    console.log(customerInformationObject);
+
 
     const urlCustomerLink = "../php/CreateAccount.php";
     //Gets the fetch api response
