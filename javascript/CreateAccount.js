@@ -13,6 +13,7 @@ function handleCustomerInformation(event){
     //Calling our Api here
     postCustomerInfor();
 }
+
 btnSigninBtn.addEventListener("click",handleCustomerInformation);
 //Getting data from html form to javascript
 
@@ -126,6 +127,8 @@ async function postCustomerInfor(){
         firstNamePHP:firstName,
         lastNamePHP:lastName,
     };
+
+    console.log(customerInformationObject);
 
 //     document.addEventListener("DOMContentLoaded", () => {
 //     const toggleIcons = document.querySelectorAll(".toggle-password");
