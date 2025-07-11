@@ -3,6 +3,7 @@
 
 //Getting data from html form to javascript
 const firstName = document.querySelector(".firstName").value.trim();
+console.log(firstName);
 const lastName = document.querySelector(".lastName").value.trim();
 const email = document.querySelector(".Email").value.trim();
 const password = document.querySelector(".password").value.trim();
@@ -110,7 +111,7 @@ async function postCustomerInfor(){
         lastNamePHP:lastName,
     };
 
-    console.log(customerInformationObject);
+    // console.log(customerInformationObject);
 
 
     // const urlCustomerLink = "../php/CreateAccount.php";
