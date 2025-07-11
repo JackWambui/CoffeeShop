@@ -141,7 +141,10 @@ async function postCustomerInfor(){
     });
 
     const responseData = await response.json();
-    console.log(responseData);
+    // console.log(responseData);
+    for(let key in responseData){
+        alert(responseData[key]);
+    }
 }
 
 
