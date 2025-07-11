@@ -113,18 +113,18 @@ async function postCustomerInfor(){
     console.log(customerInformationObject);
 
 
-    const urlCustomerLink = "../php/CreateAccount.php";
-    //Gets the fetch api response
-    const response = await fetch(urlCustomerLink,{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify(customerInformationObject)
-    });
+    // const urlCustomerLink = "../php/CreateAccount.php";
+    // //Gets the fetch api response
+    // const response = await fetch(urlCustomerLink,{
+    //     method:"POST",
+    //     headers:{
+    //         "Content-Type":"application/json"
+    //     },
+    //     body:JSON.stringify(customerInformationObject)
+    // });
 
-    const responseData = await response.json();
-    console.log(responseData);
+    // const responseData = await response.json();
+    // console.log(responseData);
 }
 
 
