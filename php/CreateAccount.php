@@ -12,10 +12,10 @@
         $json = file_get_contents("php://input");
         $jsonData = json_decode($json,true);
 
-        $message = $jsonData;
+        // $message = $jsonData;
 
-        // $customerFirstNameDB = $jsonData["firstNamePHP"];
-        // $message = $customerFirstNameDB;
+        $customerFirstNameDB = $jsonData["firstNamePHP"];
+        $message = $customerFirstNameDB;
         // $sql = "INSERT INTO customers (customer_fname, customer_lname)
         // VALUES ('John', 'Doe', 'john@example.com')";
 
