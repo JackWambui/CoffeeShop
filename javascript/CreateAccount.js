@@ -90,28 +90,28 @@ btnSigninBtn.addEventListener("click",handleCustomerInformation);
 //     }
 // });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     // Toggle password visibility
-//     const toggleIcons = document.querySelectorAll(".toggle-password");
+document.addEventListener("DOMContentLoaded", () => {
+    // Toggle password visibility
+    const toggleIcons = document.querySelectorAll(".toggle-password");
 
-//     toggleIcons.forEach(icon => {
-//         icon.addEventListener("click", () => {
-//             const inputSelector = icon.getAttribute("toggle");
-//             const passwordInput = document.querySelector(inputSelector);
+    toggleIcons.forEach(icon => {
+        icon.addEventListener("click", () => {
+            const inputSelector = icon.getAttribute("toggle");
+            const passwordInput = document.querySelector(inputSelector);
 
-//             if (passwordInput) {
-//                 const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-//                 passwordInput.setAttribute("type", type);
+            if (passwordInput) {
+                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+                passwordInput.setAttribute("type", type);
 
-//                 icon.classList.toggle("fa-eye");
-//                 icon.classList.toggle("fa-eye-slash");
-//             }
-//         });
-//     });
+                icon.classList.toggle("fa-eye");
+                icon.classList.toggle("fa-eye-slash");
+            }
+        });
+    });
 
-//     // (Your existing signup and signin validation code can follow here)
+    // (Your existing signup and signin validation code can follow here)
     
-// });
+});
 
 //Api Connection for sending data to php file from javaScript above
 async function postCustomerInfor(){
