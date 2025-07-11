@@ -5,40 +5,30 @@ function getShoppingCartDetails(){
 
 function updateCartNumber(){
     const totalOrderNumber = document.querySelector(".js-order-number");
-
+    const totalOrdersCart = getShoppingCartDetails().length;
     if(checkShoppingCartNotEmpty() === true){
-        const totalOrdersCart = getShoppingCartDetails().length;
+        // const totalOrdersCart = getShoppingCartDetails().length;
         // console.log(getShoppingCartDetails());
         if(totalOrdersCart > 0){
             totalOrderNumber.innerText = totalOrdersCart;
         }
     }
+    //Try Again!!!!
+    // else{
+    //     totalOrderNumber.innerText = 0;
+    // }
 }
 
 window.addEventListener("DOMContentLoaded",updateCartNumber);
-   
-// console.log(Array.isArray(totalOrdersCart));
-// console.log(getShoppingCartDetails().length);
 
 const ordersFeaturesContainer = document.querySelector(".ordersFeatures");
-
-/*Look into this code
-  <th>
-    Product No
-  </th>
-  <td>
-    ${productId}
-  </td>
-*/
-
 if(ordersFeaturesContainer){
     const tableElement = document.createElement("table");
     tableElement.classList.add("js-table");
 
     ordersFeaturesContainer.append(tableElement);
     const ordersInformation = getShoppingCartDetails();
-    // console.log(ordersInformation);
-
+ 
     if(checkShoppingCartNotEmpty() === true){
         tableElement.innerHTML = `
         <thead>
@@ -80,8 +70,6 @@ if(ordersFeaturesContainer){
         let productId = ord.id;
 
         totalAmountDue = totalAmountDue + totalPriceNum;
-        // console.log("Amount Due",typeof totalAmountDue);
-
         const trElement = document.createElement("tr");
         trElement.setAttribute("data-id",productId);
 
@@ -119,10 +107,7 @@ if(ordersFeaturesContainer){
         `;
         tBody.append(trElement);
         });
-        // console.log("Amount Due",totalAmountDue);
-        // console.log(ordersFeaturesContainer);
-        // testApp(ordersFeaturesContainer);
-
+        
         const shoppingCartFeat = document.querySelector(".shopping-cart-features");
 
         const additionalCartDivEl = document.createElement("div");
@@ -133,11 +118,11 @@ if(ordersFeaturesContainer){
                 <span class="js-total-order-price">${(totalAmountDue).toFixed(2)}</span>
             <div>
             <div class="js-shopping-cart-button-container">
-                <button class="submit-btn btn-success js-btn-1">
+                <button class="submit-btn btn-success js-btn-1 js-submit-order-btn">
                     Submit Order
                 </button>
 
-                <button class="clear-btn btn-danger js-btn-1">
+                <button class="clear-btn btn-danger js-btn-1 js-clear-shopping-cart-btn">
                     Clear Shopping Cart
                 </button>
             </div>
@@ -152,11 +137,9 @@ if(ordersFeaturesContainer){
             if(targetEl.classList.contains("submit-btn")){
                 const orderPaymentContainer = document.querySelector(".js-order-payments");
                 orderPaymentContainer.classList.remove("js-class-none");
-                // console.log("order submitted.")
             }else if(targetEl.classList.contains("clear-btn")){
                 clearShoppingCartDetails();
                 updateCartPageDetails();
-                // console.log("cart has been emptied out.")
             }
         }
 
@@ -168,13 +151,12 @@ if(ordersFeaturesContainer){
             const targetElement = event.target;
             let targetParentElement = targetElement.parentElement.parentElement;
             const tableRowId = parseInt(targetParentElement.getAttribute("data-id"),10);
-            // console.log(tableRowId); 
             if(targetElement.classList.contains("edit-button")){
                 // console.log("edit");
             }else if(targetElement.classList.contains("delete-button")){
-                // console.log("delete order");
                 targetParentElement.remove();
                 updateShoppingCartLocalStorage(tableRowId);
+                //check to see if array is empty before updating the cart body.Try Again!!
             }
         }
 
@@ -189,7 +171,6 @@ if(ordersFeaturesContainer){
 
 
 function clearShoppingCartDetails(){
-    //localStorage.clear();
    localStorage.removeItem("cart");
    window.location.reload();
 }
@@ -197,7 +178,6 @@ function clearShoppingCartDetails(){
 function checkShoppingCartNotEmpty(){
     return (Array.isArray(getShoppingCartDetails()));
 }
-// console.log(typeof checkShoppingCartNotEmpty());
 
 //Try Again
 function updateShoppingCartLocalStorage(orderId){
@@ -218,29 +198,3 @@ function updateCartPageDetails(){
     emptyCartH2El.innerText = "The Cart is empty,Please go ahead and shop.";
     ordersFeaturesContainer.append(emptyCartH2El);   
 }
-
-// const cartTableBody = document.querySelector(".js-cart-tbody");
-
-// function performEditOrDeleteAction(event){
-//     const targetElement = event.target;
-//     let targetParentElement = targetElement.parentElement.parentElement;
-//     const tableRowId = parseInt(targetParentElement.getAttribute("data-id"),10);
-//     console.log(tableRowId);
-            
-//     if(targetElement.classList.contains("edit-button")){
-//         console.log("edit");
-//     }else if(targetElement.classList.contains("delete-button")){
-//         console.log("delete order");
-//         targetParentElement.remove();
-//         updateShoppingCartLocalStorage(tableRowId);
-//     }
-// }
-
-// cartTableBody.addEventListener("click",performEditOrDeleteAction);
-
-
-
-
-
-
-
