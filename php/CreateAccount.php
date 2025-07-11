@@ -5,7 +5,8 @@
 
     //Gets the type of method being sent in the api
     $requestType = $_SERVER["REQUEST_METHOD"];
-    $message;
+    
+    $message = $requestType;
     if($requestType === "POST"){
         $json = file_get_contents("php://input");
         $jsonData = json_decode($json,true);

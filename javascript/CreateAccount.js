@@ -122,7 +122,6 @@ async function postCustomerInfor(){
     });
 
     const responseData = await response.json();
-
     console.log(responseData);
 }
 
