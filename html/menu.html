@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="../css/createAccount.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header class="js-main-header">
         <nav>
@@ -22,15 +24,14 @@
                 <li><a href="../html/about.html">ABOUT US</a></li>
                 <li><a href="../html/menu.html">MENU</a></li>
                 <li><a href="../html/contactUs.html">CONTACT US</a></li>
-
                 <li class="dropdown">
                     <button class="dropbtn">ADMIN ACCOUNT</button>
                     <div class="dropdown-content">
-                        <a href="../html/signin.html#signin">SIGN IN</a>
-                        <a href="../html/CreateAccount.html#signup">SIGN UP</a>
+                        <a href="../html/adminSignIn.html">SIGN IN</a>
+                        <a href="../html/adminAccount.html">SIGN UP</a>
                     </div>
                 </li>
-                
+
                 <li class="dropdown">
                     <button class="dropbtn">CREATE ACCOUNT</button>
                     <div class="dropdown-content">
@@ -40,10 +41,10 @@
                 </li>
                 <li>
                     <a href="../html/shopping-cart.html">
-                       <i class="fa-solid fa-cart-shopping order-cart">
-                        <!--Try adding 0 value to cart-->
-                        <span class="js-order-number"></span>
-                       </i>
+                        <i class="fa-solid fa-cart-shopping order-cart">
+                            <!--Try adding 0 value to cart-->
+                            <span class="js-order-number"></span>
+                        </i>
                     </a>
                 </li>
             </ul>
@@ -53,33 +54,34 @@
                 <div class="line"></div>
             </div>
         </nav>
-       
+
     </header>
     <!--Test Code-->
     <main>
-    <section class="test-container">
-        <div class="secondary-nav">
-            <ul class="secondary-items">
+        <section class="test-container">
+            <div class="secondary-nav">
+                <ul class="secondary-items">
 
-            </ul>
-            <form class="search-form" autocomplete="off">
-                <label for="search"></label>
-                <input type="search" id="searchProduct" class="js-search-input" name="queryProduct" placeholder="Search for Product of Choice">
-                <!-- <button type="button" class="searchTestingBtn btn">
+                </ul>
+                <form class="search-form" autocomplete="off">
+                    <label for="search"></label>
+                    <input type="search" id="searchProduct" class="js-search-input" name="queryProduct"
+                        placeholder="Search for Product of Choice">
+                    <!-- <button type="button" class="searchTestingBtn btn">
                      Search
                 </button> -->
-            </form>
-        </div>
-    </section>
-    
-    <section class="container js-categories-section">
-        <h1>
-            Our Products
-        </h1>
-        <div class="grid-container23 categoriesFeatures productTest" id="js-categoriesFeatures">
+                </form>
+            </div>
+        </section>
 
-        </div>
-    </section>
+        <section class="container js-categories-section">
+            <h1>
+                Our Products
+            </h1>
+            <div class="grid-container23 categoriesFeatures productTest" id="js-categoriesFeatures">
+
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -87,8 +89,8 @@
             <h3>Follow us:</h3>
             <div class="icons">
                 <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/"  target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://x.com/"  target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
         <div class="footer-links">
@@ -105,4 +107,5 @@
     <script src="../javascript/getCartOrders.js"></script>
     <script src="../javascript/categoryScript.js"></script>
 </body>
+
 </html>
