@@ -71,7 +71,17 @@ h1 {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
     cursor: pointer;
+ text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* additional styles like padding, border, background, etc. */
 }
+
+
+
 
 .card:hover {
     transform: translateY(-5px);
