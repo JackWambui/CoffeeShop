@@ -1,0 +1,37 @@
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.status-active { color: green; }
+.status-inactive { color: red; }
+
+/* Form Styles */
+.form-table td {
+  padding: 8px 0;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+input, select {
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Buttons */
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.btn-edit { background: #4CAF50; color: white; }
+.btn-comment { background: #2196F3; }
+.btn-register, .btn-update { 
+  background: #FF9800; 
+  margin-top: 20px;
+}

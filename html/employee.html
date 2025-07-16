@@ -45,51 +45,54 @@
 
         
     </header>
-     <div class="content-wrapper">
-<div class="sidenav">
-  <a href="employee.html">Manage Employees</a>
-  <a href="customer.html">Manage Customers</a>
-  <a href="categories.html">Manage Categories</a>
-  <a href="Adminproducts.html">Manage Products</a>
-  <a href="accountsFinance.html">Accounts & Finance</a>
-  <a href="salesReport.html">Sales Reports</a>
-  <a href="setting.html">System Setting</a>
+<div class="table-container">
+  <h2>Employees Information</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Emp_Type</th>
+        <th>Status</th>
+        <th>Created At</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>emp1</td>
+        <td>Jane</td>
+        <td>Doe</td>
+        <td>doe@gmail.com</td>
+        <td>••••••••</td>
+        <td>Manager</td>
+        <td><span class="status-active">Active</span></td>
+        <td>2025-03-20</td>
+        <td>
+          <button class="btn-edit">Edit</button>
+          <button class="btn-comment">💬</button>
+        </td>
+      </tr>
+      <!-- Additional rows here -->
+    </tbody>
+  </table>
+  <!-- Pagination -->
+  <div class="pagination">
+    <button>Previous</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <span>...</span>
+    <button>7</button>
+    <button>Next</button>
+  </div>
 </div>
 
-<div class="main">
-  <h1>Admin Control Center</h1>
- <div class="grid-container">
-  <a href="employee.html" class="card">
-    <i class="fas fa-users"></i><p>Manage Employees</p>
-  </a>
-  <a href="customer.html" class="card">
-    <i class="fas fa-user-friends"></i><p>Manage Customers</p>
-  </a>
-  <a href="categories.html" class="card">
-    <i class="fas fa-shapes"></i><p>Manage Categories</p>
-  </a>
-  <a href="Adminproducts.html" class="card">
-    <i class="fas fa-box-open"></i><p>Manage Products</p>
-  </a>
-  <a href="salesReport.html" class="card">
-    <i class="fas fa-box"></i><p>Orders</p>
-  </a>
-  <a href="salesReport.html" class="card">
-    <i class="fas fa-chart-bar"></i><p>Sales Reports</p>
-  </a>
-  <a href="restore.html" class="card">
-    <i class="fas fa-database"></i><p>Backup & Restore</p>
-  </a>
-  <a href="security.html" class="card">
-    <i class="fas fa-shield-alt"></i><p>Security Management</p>
-  </a>
-  <a href="setting.html" class="card">
-    <i class="fas fa-cogs"></i><p>System Settings</p>
-  </a>
-</div>
-
-</div>
-     </div>
 
     <footer class="footer">
         <div class="social-links">
