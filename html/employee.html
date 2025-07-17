@@ -8,10 +8,11 @@
    <link rel="stylesheet" href="../css/createAccount.css">
     <link rel="stylesheet" href="../css/adminAccount.css">
     <link rel="stylesheet" href="../css/admin.css">
+     <link rel="stylesheet" href="../css/employeeTable.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>/
+</head>
 <body>
     <header>
         <nav>
@@ -23,117 +24,19 @@
             <ul class="nav-links">
            
                 <body>
-     <div class="container">
-<h1>Student Data</h1>
-
-<form method="POST" name="sample">
-<br>
-    Roll No. <input type="number" name="rollno"> 
-    Name: <input type="text" name="name">
-    <br><br>
-    <input type="button" name="add" value="Add Data" onclick="addStudent();" class="btn btn-success"><hr>
-
-            <table id="tbl" class="table" border="1">
-                <thead>
-                <th>rollno</th> 
-                <th>Name</th>
-                <th> Delete</th>
-                <th>Update</th>
-               
-                </thead>
-                
-                 <tbody>
-                     
-                 </tbody>
-             </table>
-
-</form>
-
- <script type="text/javascript">
-       
-    function addStudent()
-    { 
-        var rollno=document.sample.rollno.value; 
-        var name=document.sample.name.value; 
-        
-        var tr = document.createElement('tr');
-        
-        var td1 = tr.appendChild(document.createElement('td'));
-        var td2 = tr.appendChild(document.createElement('td'));
-        var td3 = tr.appendChild(document.createElement('td'));
-        var td4 = tr.appendChild(document.createElement('td'));
-        
-        
-        td1.innerHTML=rollno;
-        td2.innerHTML=name;
-        td3.innerHTML='<input type="button" name="del" value="Delete" onclick="delStudent(this);" class="btn btn-danger">'
-        td4.innerHTML='<input type="button" name="up" value="Update" onclick="UpStud(this);" class="btn btn-primary">'
-
-        document.getElementById("tbl").appendChild(tr);
-    }
-
-    function UpStud(stud){
-         var rollno=document.sample.rollno.value; 
-        var name=document.sample.name.value; 
-        var s = stud.parentNode.parentNode;
-        var tr = document.createElement('tr');
-        
-        var td1 = tr.appendChild(document.createElement('td'));
-        var td2 = tr.appendChild(document.createElement('td'));
-        var td3 = tr.appendChild(document.createElement('td'));
-        var td4 = tr.appendChild(document.createElement('td'));
-        
-        
-        td1.innerHTML='<input type="number" name="rollno1">';
-        td2.innerHTML='<input type="text" name="name1">';
-        td3.innerHTML='<input type="button" name="del" value="Delete" onclick="delStudent(this);" class="btn btn-danger">'
-        td4.innerHTML='<input type="button" name="up" value="Update" onclick="addUpStud(this);" class="btn btn-primary">'
-
-        document.getElementById("tbl").replaceChild(tr, s);
-    }
-
-    function addUpStud(stud){
-        var rollno=document.sample.rollno1.value; 
-        var name=document.sample.name1.value; 
-        var s = stud.parentNode.parentNode;
-        var tr = document.createElement('tr');
-        
-        var td1 = tr.appendChild(document.createElement('td'));
-        var td2 = tr.appendChild(document.createElement('td'));
-        var td3 = tr.appendChild(document.createElement('td'));
-        var td4 = tr.appendChild(document.createElement('td'));
-        
-        
-        td1.innerHTML=rollno;
-        td2.innerHTML=name;
-        td3.innerHTML='<input type="button" name="del" value="Delete" onclick="delStudent(this);" class="btn btn-danger">'
-        td4.innerHTML='<input type="button" name="up" value="Update" onclick="UpStud(this);" class="btn btn-primary">'
-
-        document.getElementById("tbl").replaceChild(tr, s);
-    }
-
-    function delStudent(Stud){
-        var s=Stud.parentNode.parentNode;
-        s.parentNode.removeChild(s);
-    }
     
-    
-    </script>
-</div>
-    </body>
-
-
+                   <div class="logo-text">Admin Control Center</div>
+            </div>
+            <ul class="nav-links">
+          
                 <li class="dropdown">
-                    <button class="dropbtn">ADMIN ACCOUNT</button>
+                    <button class="dropbtn"><i class="fas fa-user-circle"></i> Admin User</button>
                     <div class="dropdown-content">
-                        <a href="../html/adminSignIn.html">profile</a>
-                        <a href="../html/adminAccount.html">Update Password</a>
-                        <a href="../html/adminAccount.html">Notification</a>
-                        <a href="../html/adminAccount.html">Logout</a>
+                        <a href="#"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Account Settings</a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </li>
-
-              
             </ul>
             <div class="hamburger">
                 <div class="line"></div>
@@ -141,56 +44,112 @@
                 <div class="line"></div>
             </div>
         </nav>
-
-        
     </header>
-<div class="table-container">
-  <h2>Employees Information</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Employee ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Emp_Type</th>
-        <th>Status</th>
-        <th>Created At</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>emp1</td>
-        <td>Jane</td>
-        <td>Doe</td>
-        <td>doe@gmail.com</td>
-        <td>••••••••</td>
-        <td>Manager</td>
-        <td><span class="status-active">Active</span></td>
-        <td>2025-03-20</td>
-        <td>
-          <button class="btn-edit">Edit</button>
-          <button class="btn-comment">💬</button>
-        </td>
-      </tr>
-      <!-- Additional rows here -->
-    </tbody>
-  </table>
-  <!-- Pagination -->
-  <div class="pagination">
-    <button>Previous</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <span>...</span>
-    <button>7</button>
-    <button>Next</button>
-  </div>
-</div>
+
+    <div class="container">
+        <h1>Employee Data Management</h1>
+        
+        <div class="form-container">
+            <form method="POST" name="employeeForm" id="employeeForm">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="employeeId">Employee ID</label>
+                        <input type="text" id="employeeId" name="employeeId" placeholder="EMP-001" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="john.doe@company.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="position">Position</label>
+                        <select id="position" name="position" required>
+                            <option value="">Select Position</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Designer">Designer</option>
+                            <option value="HR Specialist">HR Specialist</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="department">Department</label>
+                        <select id="department" name="department" required>
+                            <option value="">Select Department</option>
+                            <option value="IT">IT</option>
+                            <option value="Human Resources">Human Resources</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Finance">Finance</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="status">Status</label>
+                        <select id="status" name="status">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                            <option value="On Leave">On Leave</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate" value="2025-07-17">
+                    </div>
+                    <div class="input-group">
+                        <label>&nbsp;</label>
+                        <button type="button" name="add" class="btn btn-success" onclick="addEmployee()">
+                            <i class="fas fa-plus"></i> Add Employee
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="table-container">
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Employee ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Position</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Start Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTableBody">
+                    <!-- Employee data will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="pagination">
+            <button>Previous</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <span>...</span>
+            <button>7</button>
+            <button>Next</button>
+        </div>
+    </div>
 
 
 
@@ -212,5 +171,7 @@
         </div>
     </footer>
     <script src="../javascript/script.js"></script>
+    <script src="../javascript/employeeTable.js"></script>
+
 </body>
 </html>
