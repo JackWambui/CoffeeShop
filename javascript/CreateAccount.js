@@ -11,8 +11,8 @@ const btnSigninBtn = document.querySelector(".sign_in_btn");
 function handleCustomerInformation(event){
     event.preventDefault();
     //Calling our Api here
-    //postCustomerInfor();
-    console.log("hello");
+    postCustomerInfor();
+    // console.log("hello");
 }
 
 // btnSigninBtn.addEventListener("click",handleCustomerInformation);
