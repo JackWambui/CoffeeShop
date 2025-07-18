@@ -155,6 +155,8 @@ async function postCustomerInfor(){
 
 
     const urlCustomerLink = "../php/CreateAccount.php";
+    
+   // const urlCustomerLink = "../php/SignIn.php";
     //Gets the fetch api response
     const response = await fetch(urlCustomerLink,{
         method:"POST",
@@ -164,13 +166,14 @@ async function postCustomerInfor(){
         body:JSON.stringify(customerInformationObject)
     });
 
-    const urlCustomerLink = "../php/SignIn.php";
+  //  const urlCustomerLink = "../php/SignIn.php";
 
     const responseData = await response.json();
     // console.log(responseData);
     for(let key in responseData){
         alert(responseData[key]);
     }
+    window.location.href ="../php/SignIn.php";
 }
 
 
