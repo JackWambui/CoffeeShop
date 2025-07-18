@@ -5,9 +5,9 @@ function getShoppingCartDetails(){
 
 function updateCartNumber(){
     const totalOrderNumber = document.querySelector(".js-order-number");
-    const totalOrdersCart = getShoppingCartDetails().length;
+    // const totalOrdersCart = getShoppingCartDetails().length;
     if(checkShoppingCartNotEmpty() === true){
-        // const totalOrdersCart = getShoppingCartDetails().length;
+        const totalOrdersCart = getShoppingCartDetails().length;
         // console.log(getShoppingCartDetails());
         if(totalOrdersCart > 0){
             totalOrderNumber.innerText = totalOrdersCart;
@@ -31,10 +31,10 @@ if(ordersFeaturesContainer){
  
     if(checkShoppingCartNotEmpty() === true){
         tableElement.innerHTML = `
-        <thead>
+        <thead class="order-table-headings">
             <tr>
                 <th>
-                    Order No
+                    
                 </th>
                 <th>
                     Image
@@ -46,7 +46,7 @@ if(ordersFeaturesContainer){
                     Product Price
                 </th>
                 <th>
-                    Quantity
+                    Qty
                 </th>
                 <th>
                     Amount
@@ -72,6 +72,7 @@ if(ordersFeaturesContainer){
         totalAmountDue = totalAmountDue + totalPriceNum;
         const trElement = document.createElement("tr");
         trElement.setAttribute("data-id",productId);
+        trElement.classList.add("table-row-info");
 
         trElement.innerHTML = `
             <td>
