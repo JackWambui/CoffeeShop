@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="../css/adminAccount.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -22,7 +24,7 @@
                 <li><a href="../html/about.html">ABOUT US</a></li>
                 <li><a href="../html/menu.html">MENU</a></li>
                 <li><a href="../html/contactUs.html">CONTACT US</a></li>
-                   <li class="dropdown">
+                <li class="dropdown">
                     <button class="dropbtn">ADMIN ACCOUNT</button>
                     <div class="dropdown-content">
                         <a href="../html/adminSignIn.html">SIGN IN</a>
@@ -42,7 +44,7 @@
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
-            
+
         </nav>
     </header>
 
@@ -54,48 +56,32 @@
             </div>
         </section>
 
-        <section class="container" id="signup">
+        <section class="container" id="signin">
             <div class="image">
                 <img src="../images/Mixed coffee cups.jpg" alt="image">
-            
+
                 <div class="overlay">
-                    <h1>Sign Up</h1>
-                    <form class="signup">
+                    <h1>Sign In</h1>
+                    <form class="signin">
                         <div class="form-information">
                             <label for="Username">Username:</label>
                             <input type="text" id="username" name="username" required>
                         </div>
                         <div class="form-information">
-                            <label for="First Name">First Name:</label>
-                            <!--Add class for the rest of the input fields-->
-                            <input type="text" id="First Name" name="First Name" class="firstName" required>
-                        </div>
-                        <div class="form-information">
-                            <label for="Last Name">Last Name:</label>
-                            <input type="text" id="Last Name" name="Last Name" class="lastName" required>
-                        </div>
-                        <div class="form-information">
                             <label for="Email">Email:</label>
-                            <input type="text" id="Email" name="Email" class="Email" required>
+                            <input type="text" id="Email" name="Email" required>
                         </div>
                         <div class="form-information">
                             <label for="Password">Password:</label>
                             <div class="password-wrapper">
-                                <input type="password" id="Password" name="Password" class="password" required>
+                                <input type="text" id="Password" name="Password" required>
                                 <i class="fas fa-eye toggle-password" toggle="#Password"></i>
                             </div>
                         </div>
-                        <div class="form-information">
-                            <label for="Confirm Password">Confirm Password:</label>
-                            <div class="password-wrapper">
-                                <input type="password" id="Confirm Password" name="Confirm Password" class="confirmPassword" required>
-                                <i class="fas fa-eye toggle-password" toggle="#Confirm\ Password"></i>
-                            </div>
-                        </div>
-                        <button type="submit" class="sign_in_btn">Sign Up</button>
+                        <button type="submit">Sign In</button>
                     </form>
                 </div>
-            </div> 
+            </div>
         </section>
 
     </main>
@@ -105,8 +91,8 @@
             <h3>Follow us:</h3>
             <div class="icons">
                 <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/"  target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://x.com/"  target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
         <div class="footer-links">
@@ -118,7 +104,8 @@
         </div>
     </footer>
 
-    <script src="../javascript/script.js"></script>
-     <script src="../javascript/CreateAccount.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/CreateAccount.js"></script>
 </body>
+
 </html>

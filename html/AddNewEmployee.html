@@ -1,0 +1,63 @@
+<!-- addEmployee.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Employee</title>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="../css/employeeTable.css"/>
+</head>
+<body>
+  <header>
+    <h2 style="text-align:center; margin-top:20px;">Add New Employee</h2>
+  </header>
+
+  <div class="form-container">
+    <form id="newEmployeeForm" action="employeeTable.html" method="POST">
+      <div class="input-group">
+        <label for="employeeId">Employee ID</label>
+        <input type="text" name="employeeId" id="employeeId" required>
+      </div>
+      <div class="input-group">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" required>
+      </div>
+      <div class="input-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div class="input-group">
+        <label for="position">Position</label>
+        <select name="position" id="position" required>
+          <option value="">Select Position</option>
+          <option value="Manager">Manager</option>
+          <option value="Barista">Barista</option>
+          <option value="Cashier">Cashier</option>
+          <option value="Kitchen Staff">Kitchen Staff</option>
+          <option value="Dish Washer">Dish Washer</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="status">Status</label>
+        <select name="status" id="status">
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+          <option value="On Leave">On Leave</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" name="startDate" id="startDate">
+      </div>
+      <div class="input-group">
+        <button type="submit" class="btn btn-success">Add Employee</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
