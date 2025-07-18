@@ -1,0 +1,101 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    background-color: #fff;
+}
+
+.content-wrapper {
+    flex: 1;
+    /* takes all space between header and footer */
+    display: flex;
+    overflow: hidden;
+    /* prevent scroll */
+}
+
+.sidenav {
+    width: 250px;
+    background: rgba(0, 0, 0, 0.6);
+    background-image: url('../images/coffee.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-top: 60px;
+    overflow-y: auto;
+    /* scroll inside sidebar if needed */
+}
+
+.main {
+    flex: 1;
+    overflow-y: auto;
+    /* scroll inside main content if needed */
+    padding: 20px;
+}
+
+
+.sidenav a {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    font-weight: bold;
+}
+
+.sidenav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffcc00;
+}
+
+
+h1 {
+    font-size: 28px;
+    margin-top: 80px;
+    /* Creates space from the top navbar */
+    margin-bottom: 30px;
+    text-align: center;
+    /* Horizontally center the text */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+.card {
+    background-color: #f5e1ce;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    cursor: pointer;
+ text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* additional styles like padding, border, background, etc. */
+}
+
+
+
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+.card p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
