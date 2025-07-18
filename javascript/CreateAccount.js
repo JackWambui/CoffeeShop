@@ -164,6 +164,8 @@ async function postCustomerInfor(){
         body:JSON.stringify(customerInformationObject)
     });
 
+    const urlCustomerLink = "../php/SignIn.php";
+
     const responseData = await response.json();
     // console.log(responseData);
     for(let key in responseData){
