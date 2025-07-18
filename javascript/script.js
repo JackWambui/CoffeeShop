@@ -134,31 +134,31 @@ document.querySelectorAll('.feature').forEach(element => {
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contactForm");
-    const message = document.getElementById("formMessage");
+// document.addEventListener("DOMContentLoaded", () => {
+//     const form = document.getElementById("contactForm");
+//     const message = document.getElementById("formMessage");
   
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+//     form.addEventListener("submit", function (e) {
+//       e.preventDefault();
   
-      const name = form.querySelector("#name").value.trim();
-      const email = form.querySelector("#email").value.trim();
-      const phone = form.querySelector("#phone").value.trim();
-      const msg = form.querySelector("#message").value.trim();
+//       const name = form.querySelector("#name").value.trim();
+//       const email = form.querySelector("#email").value.trim();
+//       const phone = form.querySelector("#phone").value.trim();
+//       const msg = form.querySelector("#message").value.trim();
   
-      if (!name || !email || !phone || !msg) {
-        alert("Please fill in all fields correctly.");
-        return;
-      }
+//       if (!name || !email || !phone || !msg) {
+//         alert("Please fill in all fields correctly.");
+//         return;
+//       }
   
-      message.classList.remove("hidden");
-      message.style.opacity = "1";
-      message.style.visibility = "visible";
-      form.reset();
+//       message.classList.remove("hidden");
+//       message.style.opacity = "1";
+//       message.style.visibility = "visible";
+//       form.reset();
   
-      setTimeout(() => {
-        message.style.opacity = "0";
-        message.style.visibility = "hidden";
-      }, 3000);
-    });
-  });
+//       setTimeout(() => {
+//         message.style.opacity = "0";
+//         message.style.visibility = "hidden";
+//       }, 3000);
+//     });
+//   });

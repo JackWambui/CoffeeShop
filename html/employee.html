@@ -31,13 +31,13 @@
                     </div>
                     <ul class="nav-links">
 
-                       <li class="dropdown">
-                    <button class="dropbtn">ADMIN ACCOUNT</button>
-                    <div class="dropdown-content">
-                        <a href="../html/adminSignIn.html">profile</a>
-                        <a href="../html/adminAccount.html">Logout</a>
-                    </div>
-                </li>
+                        <li class="dropdown">
+                            <button class="dropbtn">ADMIN ACCOUNT</button>
+                            <div class="dropdown-content">
+                                <a href="../html/adminSignIn.html">profile</a>
+                                <a href="../html/adminAccount.html">Logout</a>
+                            </div>
+                        </li>
                     </ul>
                     <div class="hamburger">
                         <div class="line"></div>
@@ -49,6 +49,12 @@
 
     <div class="container">
         <h1>Employee Data Management</h1>
+        <div style="text-align: right; margin-bottom: 10px;">
+            <button class="btn btn-success" onclick="openEmployeeModal()">
+                <i class="fas fa-plus"></i> Add Employee
+            </button>
+        </div>
+
 
         <div class="form-container">
             <form method="POST" name="employeeForm" id="employeeForm">
