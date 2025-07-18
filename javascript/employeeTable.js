@@ -1,8 +1,8 @@
         const sampleEmployees = [
-            {id: 1, empId: "EMP-001", firstName: "John", lastName: "Doe", email: "john.doe@company.com", position: "Manager", department: "IT", status: "Active", startDate: "2024-01-15"},
-            {id: 2, empId: "EMP-002", firstName: "Jane", lastName: "Smith", email: "jane.smith@company.com", position: "Developer", department: "IT", status: "Active", startDate: "2024-02-20"},
-            {id: 3, empId: "EMP-003", firstName: "Robert", lastName: "Johnson", email: "robert.j@company.com", position: "HR Specialist", department: "Human Resources", status: "Active", startDate: "2023-11-05"},
-            {id: 4, empId: "EMP-004", firstName: "Emily", lastName: "Davis", email: "emily.d@company.com", position: "Designer", department: "Marketing", status: "On Leave", startDate: "2023-09-12"}
+            {id: 1, empId: "EMP-001", firstName: "John", lastName: "Doe", email: "john.doe@company.com", position: "Manager", status: "Active", startDate: "2024-01-15"},
+            {id: 2, empId: "EMP-002", firstName: "Jane", lastName: "Smith", email: "jane.smith@company.com", position: "Developer", status: "Active", startDate: "2024-02-20"},
+            {id: 3, empId: "EMP-003", firstName: "Robert", lastName: "Johnson", email: "robert.j@company.com", position: "HR Specialist",  status: "Active", startDate: "2023-11-05"},
+            {id: 4, empId: "EMP-004", firstName: "Emily", lastName: "Davis", email: "emily.d@company.com", position: "Designer", status: "On Leave", startDate: "2023-09-12"}
         ];
         
         // Initialize table with sample data
@@ -37,7 +37,6 @@
                 <td>${employee.lastName}</td>
                 <td>${employee.email}</td>
                 <td>${employee.position}</td>
-                <td>${employee.department}</td>
                 <td><span class="${statusClass}">${employee.status}</span></td>
                 <td>${employee.startDate}</td>
                 <td>
@@ -57,7 +56,6 @@
             const lastName = form.lastName.value;
             const email = form.email.value;
             const position = form.position.value;
-            const department = form.department.value;
             const status = form.status.value;
             const startDate = form.startDate.value;
             
@@ -160,7 +158,6 @@
             const lastName = cells[3].querySelector('input').value;
             const email = cells[4].querySelector('input').value;
             const position = cells[5].querySelector('select').value;
-            const department = cells[6].querySelector('select').value;
             const status = cells[7].querySelector('select').value;
             const startDate = cells[8].querySelector('input').value;
             
