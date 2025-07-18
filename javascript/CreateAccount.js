@@ -11,10 +11,13 @@ const btnSigninBtn = document.querySelector(".sign_in_btn");
 function handleCustomerInformation(event){
     event.preventDefault();
     //Calling our Api here
-    postCustomerInfor();
+    //postCustomerInfor();
+    console.log("hello");
 }
 
-btnSigninBtn.addEventListener("click",handleCustomerInformation);
+// btnSigninBtn.addEventListener("click",handleCustomerInformation);
+
+
 //Getting data from html form to javascript
 
 
@@ -174,3 +177,4 @@ async function postCustomerInfor(){
 }
 
 
+btnSigninBtn.addEventListener("click",handleCustomerInformation);
