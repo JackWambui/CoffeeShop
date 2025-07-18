@@ -1,8 +1,8 @@
         const sampleEmployees = [
-            {id: 1, empId: "EMP-001", firstName: "John", lastName: "Doe", email: "john.doe@company.com", position: "Manager", status: "Active", startDate: "2024-01-15"},
-            {id: 2, empId: "EMP-002", firstName: "Jane", lastName: "Smith", email: "jane.smith@company.com", position: "Developer", status: "Active", startDate: "2024-02-20"},
-            {id: 3, empId: "EMP-003", firstName: "Robert", lastName: "Johnson", email: "robert.j@company.com", position: "HR Specialist",  status: "Active", startDate: "2023-11-05"},
-            {id: 4, empId: "EMP-004", firstName: "Emily", lastName: "Davis", email: "emily.d@company.com", position: "Designer", status: "On Leave", startDate: "2023-09-12"}
+            {id: 1, empId: "EMP-001", firstName: "John", lastName: "Doe", email: "john.doe@company.com", position: "Manager", department: "IT", status: "Active", startDate: "2024-01-15"},
+            {id: 2, empId: "EMP-002", firstName: "Jane", lastName: "Smith", email: "jane.smith@company.com", position: "Developer", department: "IT", status: "Active", startDate: "2024-02-20"},
+            {id: 3, empId: "EMP-003", firstName: "Robert", lastName: "Johnson", email: "robert.j@company.com", position: "HR Specialist", department: "Human Resources", status: "Active", startDate: "2023-11-05"},
+            {id: 4, empId: "EMP-004", firstName: "Emily", lastName: "Davis", email: "emily.d@company.com", position: "Designer", department: "Marketing", status: "On Leave", startDate: "2023-09-12"}
         ];
         
         // Initialize table with sample data
@@ -37,6 +37,7 @@
                 <td>${employee.lastName}</td>
                 <td>${employee.email}</td>
                 <td>${employee.position}</td>
+                <td>${employee.department}</td>
                 <td><span class="${statusClass}">${employee.status}</span></td>
                 <td>${employee.startDate}</td>
                 <td>
@@ -50,32 +51,43 @@
         
         // Add a new employee
         function addEmployee() {
-            const form = document.forms['employeeForm'];
-            const empId = form.employeeId.value;
-            const firstName = form.firstName.value;
-            const lastName = form.lastName.value;
-            const email = form.email.value;
-            const position = form.position.value;
-            const status = form.status.value;
-            const startDate = form.startDate.value;
-            
-            if (!empId || !firstName || !lastName || !email || !position || !department) {
-                alert("Please fill in all required fields");
-                return;
-            }
-            
-            // Create new employee object
-            const newEmployee = {
-                id: sampleEmployees.length + 1,
-                empId,
-                firstName,
-                lastName,
-                email,
-                position,
-                department,
-                status,
-                startDate
-            };
+    const form = document.forms['employeeForm'];
+    const empId = form.employeeId.value;
+    const firstName = form.firstName.value;
+    const lastName = form.lastName.value;
+    const email = form.email.value;
+    const position = form.position.value;
+    const status = form.status.value;
+    const startDate = form.startDate.value;
+    
+    if (!empId || !firstName || !lastName || !email || !position) {
+        alert("Please fill in all required fields");
+        return;
+    }
+    // Map position to department
+    const departmentMap = {
+        "Manager": "Management",
+        "Barista": "Coffee Preparation",
+        "Cashier": "Front Desk",
+        "Kitchen Staff": "Kitchen",
+        "Dish Washer": "Cleaning"
+    };
+    
+    const department = departmentMap[position] || "General";
+    
+    // Create new employee object
+    const newEmployee = {
+        id: sampleEmployees.length + 1,
+        empId,
+        firstName,
+        lastName,
+        email,
+        position,
+        department,
+        status,
+        startDate
+    };
+
             
             // Add to sample data
             sampleEmployees.push(newEmployee);
