@@ -173,7 +173,7 @@ async function postCustomerInfor(){
     for(let key in responseData){
         alert(responseData[key]);
     }
-    window.location.href ="../php/SignIn.php";
+    window.location.href ="../html/signIn.html";
 }
 
 
