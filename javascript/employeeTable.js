@@ -267,3 +267,54 @@
         document.querySelector('.hamburger').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
         });
+function openEmployeeModal() {
+  document.getElementById("employeeModal").style.display = "block";
+}
+
+function closeEmployeeModal() {
+  document.getElementById("employeeModal").style.display = "none";
+}
+
+function submitModalEmployee() {
+  const empId = document.getElementById("modalEmpId").value;
+  const firstName = document.getElementById("modalFirstName").value;
+  const lastName = document.getElementById("modalLastName").value;
+  const email = document.getElementById("modalEmail").value;
+  const position = document.getElementById("modalPosition").value;
+  const status = document.getElementById("modalStatus").value;
+  const startDate = document.getElementById("modalStartDate").value;
+
+  if (!empId || !firstName || !lastName || !email || !position) {
+    alert("Please fill in all required fields");
+    return;
+  }
+
+  const departmentMap = {
+    "Manager": "Management",
+    "Barista": "Coffee Preparation",
+    "Cashier": "Front Desk",
+    "Kitchen Staff": "Kitchen",
+    "Dish Washer": "Cleaning"
+  };
+
+  const department = departmentMap[position] || "General";
+
+  const newEmployee = {
+    id: sampleEmployees.length + 1,
+    empId,
+    firstName,
+    lastName,
+    email,
+    position,
+    department,
+    status,
+    startDate
+  };
+
+  sampleEmployees.push(newEmployee);
+  const row = createEmployeeRow(newEmployee);
+  document.getElementById("employeeTableBody").appendChild(row);
+
+  closeEmployeeModal();
+  alert("Employee added successfully!");
+}
