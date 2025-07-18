@@ -169,7 +169,10 @@ async function postCustomerInfor(){
     for(let key in responseData){
         alert(responseData[key]);
     }
-       window.location.href = "adminSignIn.html";
+       
+       window.location.href = "../hmtl/adminAccount.html";
+
 }
 
+// postCustomerInfor();
 
