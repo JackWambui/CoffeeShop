@@ -78,7 +78,6 @@
     // Create new employee object
     const newEmployee = {
         id: sampleEmployees.length + 1,
-  
         firstName,
         lastName,
         email,
