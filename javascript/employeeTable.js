@@ -301,13 +301,11 @@ function submitModalEmployee() {
 
   const newEmployee = {
     id: sampleEmployees.length + 1,
-    empId,
     firstName,
     lastName,
     email,
     position,
     department,
-    status,
     startDate
   };
 
