@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Cup of Inspiration | Coffee Shop</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/menuStyles.css">
     <link rel="stylesheet" href="../css/createAccount.css">
      <link rel="stylesheet" href="../css/adminAccount.css">
+    <link rel="stylesheet" href="../css/menuStyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -57,7 +57,7 @@
     </header>
     <!--Test Code-->
     <main>
-        <!-- <section class="test-container">
+       <!-- <section class="test-container">
         <div class="secondary-nav">
             <ul class="secondary-items">
 
@@ -68,77 +68,75 @@
             </form>
         </div>
     </section> -->
-
-        <section class="container shopping-cart-features">
-            <h1>
-                Shopping Cart
-            </h1>
-            <!-- <div class="grid-container23 categoriesFeatures productTest">
+    
+    <section class="container shopping-cart-features">
+        <h1>
+           Shopping Cart
+        </h1>
+        <!-- <div class="grid-container23 categoriesFeatures productTest">
 
         </div> -->
-            <div class="ordersFeatures">
-
-            </div>
-        </section>
-        <section class="container js-order-payments js-class-none" id="js-order-payments">
-            <div class="orders-payments-header">
-                <h3>
-                    Payment Form
-                </h3>
-            </div>
-            <!--Turn off autocomplete-->
-            <form id="form-payments" class="js-form-payments" autocomplete="on">
-                <div class="form-control payments-options-radios">
-                    <label for="paymentOptions">
-                        <b>Payment Methods</b>
-                    </label>
-                    <div class="radios-options">
-                        <div class="radio-option">
-                            <input type="radio" id="paymentOptions" name="paymentOptionsInput"
-                                class="js-payment-options" value="MasterCard">
-                            <label for="paymentOptions">MasterCard</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="paymentOptions" name="paymentOptionsInput"
-                                class="js-payment-options" value="VISA">
-                            <label for="paymentOptions">VISA</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="paymentOptions" name="paymentOptionsInput"
-                                class="js-payment-options" value="PayPal">
-                            <label for="paymentOptions">PayPal</label>
-                        </div>
-
+        <div class="ordersFeatures">
+       
+        </div>
+    </section>
+    <section class="container js-order-payments js-class-none" id="js-order-payments">
+        <div class="orders-payments-header">
+            <h3>
+                Payment Form
+            </h3>
+        </div>
+        <!--Turn off autocomplete-->
+        <form id="form-payments" class="js-form-payments" autocomplete="on">
+            <div class="form-control payments-options-radios">
+                <label for="paymentOptions">
+                    <b>Payment Methods</b>
+                </label>
+                <div class="radios-options">
+                    <div class="radio-option">
+                        <input type="radio" id="paymentOptions" name="paymentOptionsInput" class="js-payment-options" value="MasterCard">
+                        <label for="paymentOptions">MasterCard</label>
                     </div>
+                    <div class="radio-option">
+                        <input type="radio" id="paymentOptions" name="paymentOptionsInput" class="js-payment-options" value="VISA">
+                        <label for="paymentOptions">VISA</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="paymentOptions" name="paymentOptionsInput" class="js-payment-options" value="PayPal">
+                        <label for="paymentOptions">PayPal</label>
+                    </div>
+                   
                 </div>
-                <div class="form-control first-name">
-                    <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" name="firstNameInput" class="js-first-name">
-                </div>
-                <div class="form-control">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastNameInput" class="js-last-name">
-                </div>
-                <div class="form-control">
-                    <label for="cardNumber">Card Number</label>
-                    <input type="text" id="cardNumber" name="cardNumberInput" class="js-card-number"
-                        placeholder="0000 0000 0000 0000">
-                </div>
-                <div class="form-control">
-                    <label for="securityCode">Security Code</label>
-                    <input type="text" id="securityCode" name="securityCodeInput" class="js-security-code"
-                        placeholder="000">
-                </div>
-                <div class="form-control">
-                    <label for="cardExpiration">Card Expiration</label>
-                    <input type="text" id="cardExpiration" name="cardExpirationInput" class="js-card-expiration"
-                        placeholder="MM/YY">
-                </div>
-                <div class="form-control submit-payment-btn">
-                    <input type="submit" class="btn-primary js-submit-payment-details-btn" value="Complete Payment">
-                </div>
-            </form>
-        </section>
+            </div>
+            <div class="form-control">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstNameInput" class="js-first-name" required>
+            </div>
+            <div class="form-control">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastNameInput" class="js-last-name" required>
+            </div>
+            <div class="form-control">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumberInput" class="js-card-number" placeholder="0000 0000 0000 0000" required>
+            </div>
+            <div class="form-control">
+                <label for="securityCode">Security Code</label>
+                <input type="text" id="securityCode" name="securityCodeInput" class="js-security-code" placeholder="CVC" maxlength="3" required>
+            </div>
+            <div class="form-control">
+                <label for="cardExpiration">Card Expiration</label>
+                <input type="text" id="cardExpiration" name="cardExpirationInput" class="js-card-expiration" placeholder="MM/YY" required>
+            </div>
+            <div class="form-control submit-payment-btn">
+                <input type="submit"  class="btn-primary js-submit-payment-details-btn" value="Complete Payment">
+            </div>
+        </form>
+    </section>
+    <section class="alert-message-section">
+        
+    </section>
+
     </main>
 
     <footer class="footer footer-test">
