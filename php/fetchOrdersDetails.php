@@ -9,7 +9,8 @@
         // $message = $customerID;
         
         // $message = "see me";
-        $preparedstmt1 = "SELECT * FROM orders WHERE customer_id = $customerIDDB";
+        $preparedstmt1 = "SELECT * FROM orders WHERE customer_id = $customerIDDB
+                          ORDER BY created_at desc";
         $preparedstmt1Result = $connection->query($preparedstmt1);
         $ordersDetailsFromDB = array();
 
