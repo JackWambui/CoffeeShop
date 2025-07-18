@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // (Your existing signup and signin validation code can follow here)
+    // 
     
 });
 
@@ -163,6 +163,8 @@ async function postCustomerInfor(){
         },
         body:JSON.stringify(customerInformationObject)
     });
+
+    const urlCustomerLink = "../php/SignIn.php";
 
     const responseData = await response.json();
     // console.log(responseData);

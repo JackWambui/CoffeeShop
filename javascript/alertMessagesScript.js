@@ -1,3 +1,6 @@
+// const alertMessageSection = document.querySelector(".alert-message-section");
+// const spanEl = document.createElement("span");
+
 function alertMessagesFunc(alertType,message){
     const alertMessageSection = document.querySelector(".alert-message-section");
     const spanEl = document.createElement("span");
@@ -10,3 +13,8 @@ function alertMessagesFunc(alertType,message){
         spanEl.append(spanElTextNode);
     }
 }
+
+// setTimeout(function(){
+//     spanEl.remove();
+// },5);
+
