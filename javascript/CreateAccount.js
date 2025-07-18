@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // (Your existing signup and signin validation code can follow here)
+    // 
     
 });
 
