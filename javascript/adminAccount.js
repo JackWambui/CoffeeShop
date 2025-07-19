@@ -12,9 +12,12 @@ function handleCustomerInformation(event){
     event.preventDefault();
     //Calling our Api here
     postCustomerInfor();
+    // console.log("hello");
 }
 
-btnSigninBtn.addEventListener("click",handleCustomerInformation);
+// btnSigninBtn.addEventListener("click",handleCustomerInformation);
+
+
 //Getting data from html form to javascript
 
 
@@ -109,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // (Your existing signup and signin validation code can follow here)
+    // 
     
 });
 
@@ -154,7 +157,8 @@ async function postCustomerInfor(){
     // console.log(customerInformationObject);
 
 
-    const urlCustomerLink = "../php/CreateAccount.php";
+    const urlCustomerLink = "../php/adminAccount.php";
+    
     //Gets the fetch api response
     const response = await fetch(urlCustomerLink,{
         method:"POST",
@@ -169,10 +173,8 @@ async function postCustomerInfor(){
     for(let key in responseData){
         alert(responseData[key]);
     }
-       
-       window.location.href = "../hmtl/adminAccount.html";
-
+    window.location.href ="../html/adminSignIn.html";
 }
 
-// postCustomerInfor();
 
+btnSigninBtn.addEventListener("click",handleCustomerInformation);
