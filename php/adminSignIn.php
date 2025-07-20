@@ -1,35 +1,24 @@
 <?php
-// Connecting  to database - remember to use include
-    require("../php/database_connection.php");
-    header("Content-Type:application/json");
+require("../php/database_connection.php");
+header("Content-Type: application/json");
 
-    //Gets the type of method being sent in the api
-    $requestType = $_SERVER["REQUEST_METHOD"];
-    // $requestType = "POST";
-    
-    $message;
-    if($requestType === "POST"){
-        // $message = "Hello there";
-        $json = file_get_contents("php://input");
-        $jsonData = json_decode($json,true);
+$requestType = $_SERVER["REQUEST_METHOD"];
 
-        // $message = $jsonData;
+if ($requestType === "POST") {
+    $json = file_get_contents("php://input");
+    $data = json_decode($json, true);
 
-        $customerFirstNameDB = $jsonData["firstNamePHP"];
-        // $message = $customerFirstNameDB;
-        $sql = "INSERT INTO customers (customer_fname)
-        VALUES ('$customerFirstNameDB')";
+    $username = $data["username"];
+    $email = $data["email"];
+    $password = $data["password"];
 
-        //Dont use conn instead use connection
-        if ($connection->query($sql) === TRUE) {
-            $message = "New record created successfully";
-        } else {
-            $message = "Error";
-        }
+    $sql = "SELECT * FROM users WHERE username = '$username' AND email = '$email' AND password = '$password'";
+    $result = $connection->query($sql);
+
+    if ($result->num_rows > 0) {
+        echo json_encode(["message" => "Login successful"]);
+    } else {
+        echo json_encode(["message" => "Invalid credentials"]);
     }
-    
-    $array = array(
-        "message"=>$message
-    );
-    echo json_encode($array);
+}
 ?>
