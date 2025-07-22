@@ -1,77 +1,31 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     const signinForm = document.querySelector(".signin");
 
-//     if (signinForm) {
-//         signinForm.addEventListener("submit", async (e) => {
-//             e.preventDefault();
+document.getElementById("signinForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-//             const username = signinForm.querySelector(".username").value.trim();
-//             const email = signinForm.querySelector(".Email").value.trim();
-//             const password = signinForm.querySelector(".Password").value;
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
 
-//             if (!username || !email || !password) {
-//                 alert("Please enter all fields.");
-//                 return;
-//             }
+    try {
+        const response = await fetch("../php/signin.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ username, email, password })
+        });
 
-//             const signinData = {
-//                 username: username,
-//                 email: email,
-//                 password: password
-//             };
+        const result = await response.json();
 
-//             try {
-//                 const response = await fetch("../php/adminSignin.php", {
-//                     method: "POST",
-//                     headers: {
-//                         "Content-Type": "application/json"
-//                     },
-//                     body: JSON.stringify(signinData)
-//                 });
-
-//                 const result = await response.json();
-
-//                 alert(result.message); // show login result
-
-//                 if (response.ok) {
-//                     // ✅ Redirect to admin page
-//                     window.location.href = "../html/admin.html";
-//                 }
-
-//             } catch (error) {
-//                 console.error("Login error:", error);
-//                 alert("Login failed. Please try again.");
-//             }
-//         });
-//     }
-// });
-async function postSigninCustomerInfo() {
-    const username = document.querySelector(".username").value.trim();
-    const email = document.querySelector(".Email").value.trim();
-    const password = document.querySelector(".Password").value;
-
-    if (!username || !email || !password) {
-        alert("Please enter all fields.");
-        return;
+        if (response.ok && result.message === "Login successful") {
+            // Redirect to admin page (adjust the path as needed)
+            window.location.href = "../admin/adminDashboard.html";
+        } else {
+            alert(result.message || "Sign-in failed.");
+        }
+    } catch (error) {
+        alert("An error occurred during sign-in.");
+        console.error(error);
     }
+});
 
-    const data = {
-        action: "signin",
-        usernamePHP: username,
-        emailPHP: email,
-        passwordPHP: password
-    };
-
-    const response = await fetch("../php/adminAccount.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-    });
-
-    const responseData = await response.json();
-    alert(responseData.message || "No message from server");
-
-    if (response.ok && responseData.message === "Login successful") {
-    window.location.href = "../html/admin.html"; ; // Redirect to admin page after successful login
-    }
-}
