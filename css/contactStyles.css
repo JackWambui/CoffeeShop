@@ -702,14 +702,24 @@ footer {
     background-color: #f9d9b9;
   }
   
-  .contact-section {
-    display: flex;
-    width: 100%;
-    min-height: 400px;
-    padding: 40px 0;
-    background-color: #ffffff;
-  }
-  
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Don't center vertically under fixed header */
+  gap: 50px;
+  padding: 120px 40px 40px; /* Top padding compensates for fixed header */
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+  body, html {
+  height: 100%;
+  margin: 0;
+}
+
+
+
   .contact-left,
   .contact-right {
     width: 50%;
