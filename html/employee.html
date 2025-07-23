@@ -30,10 +30,7 @@
                         <span class="close" onclick="closeEmployeeModal()">&times;</span>
                         <h2>Add New Employee</h2>
                         <form id="modalEmployeeForm">
-                            <div class="input-group">
-                                <label>Employee ID</label>
-                                <input type="text" id="modalEmpId" required>
-                            </div>
+
                             <div class="input-group">
                                 <label>First Name</label>
                                 <input type="text" id="modalFirstName" required>
@@ -58,14 +55,6 @@
                                 </select>
                             </div>
                             <div class="input-group">
-                                <label>Status</label>
-                                <select id="modalStatus">
-                                    <option value="Active">Active</option>
-                                    <option value="Inactive">Inactive</option>
-                                    <option value="On Leave">On Leave</option>
-                                </select>
-                            </div>
-                            <div class="input-group">
                                 <label>Start Date</label>
                                 <input type="date" id="modalStartDate">
                             </div>
@@ -79,7 +68,11 @@
 
                 <body>
 
-                    <div class="logo-text">Home</div>
+                    <div class="logo-text">
+                        <a href="../html/admin.html">
+                            Home
+                        </a>
+                    </div>
                     </div>
                     <ul class="nav-links">
 
@@ -113,14 +106,13 @@
             <table id="employeeTable">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                
                         <th>Employee ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Position</th>
                         <th>Department</th>
-                        <th>Status</th>
                         <th>Start Date</th>
                         <th>Action</th>
                     </tr>

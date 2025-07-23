@@ -12,9 +12,12 @@ function handleCustomerInformation(event){
     event.preventDefault();
     //Calling our Api here
     postCustomerInfor();
+    // console.log("hello");
 }
 
-btnSigninBtn.addEventListener("click",handleCustomerInformation);
+// btnSigninBtn.addEventListener("click",handleCustomerInformation);
+
+
 //Getting data from html form to javascript
 
 
@@ -155,6 +158,7 @@ async function postCustomerInfor(){
 
 
     const urlCustomerLink = "../php/CreateAccount.php";
+    
     //Gets the fetch api response
     const response = await fetch(urlCustomerLink,{
         method:"POST",
@@ -164,13 +168,13 @@ async function postCustomerInfor(){
         body:JSON.stringify(customerInformationObject)
     });
 
-    const urlCustomerLink = "../php/SignIn.php";
-
     const responseData = await response.json();
     // console.log(responseData);
     for(let key in responseData){
         alert(responseData[key]);
     }
+    window.location.href ="../html/signIn.html";
 }
 
 
+btnSigninBtn.addEventListener("click",handleCustomerInformation);

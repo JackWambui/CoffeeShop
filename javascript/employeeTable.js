@@ -32,13 +32,13 @@
             
             tr.innerHTML = `
                 <td>${employee.id}</td>
-                <td>${employee.empId}</td>
+            
                 <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
                 <td>${employee.email}</td>
                 <td>${employee.position}</td>
                 <td>${employee.department}</td>
-                <td><span class="${statusClass}">${employee.status}</span></td>
+        
                 <td>${employee.startDate}</td>
                 <td>
                     <button class="btn btn-primary" onclick="editEmployee(this)"><i class="fas fa-edit"></i> Edit</button>
@@ -78,13 +78,12 @@
     // Create new employee object
     const newEmployee = {
         id: sampleEmployees.length + 1,
-        empId,
         firstName,
         lastName,
         email,
         position,
         department,
-        status,
+ 
         startDate
     };
 
@@ -276,12 +275,12 @@ function closeEmployeeModal() {
 }
 
 function submitModalEmployee() {
-  const empId = document.getElementById("modalEmpId").value;
+
   const firstName = document.getElementById("modalFirstName").value;
   const lastName = document.getElementById("modalLastName").value;
   const email = document.getElementById("modalEmail").value;
   const position = document.getElementById("modalPosition").value;
-  const status = document.getElementById("modalStatus").value;
+
   const startDate = document.getElementById("modalStartDate").value;
 
   if (!empId || !firstName || !lastName || !email || !position) {
@@ -301,13 +300,11 @@ function submitModalEmployee() {
 
   const newEmployee = {
     id: sampleEmployees.length + 1,
-    empId,
     firstName,
     lastName,
     email,
     position,
     department,
-    status,
     startDate
   };
 
