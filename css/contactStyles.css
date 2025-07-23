@@ -702,12 +702,13 @@ footer {
     background-color: #f9d9b9;
   }
   
+/*
 .contact-section {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Don't center vertically under fixed header */
+  align-items: flex-start; 
   gap: 50px;
-  padding: 120px 40px 40px; /* Top padding compensates for fixed header */
+  padding: 120px 40px 40px; 
   max-width: 1000px;
   margin: 0 auto;
   flex-wrap: wrap;
@@ -776,7 +777,75 @@ footer {
   .contact-right button:hover {
     background: #333;
   }
-  
+  */
+
+  .contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 100px auto 0; /* top margin offsets your fixed header */
+  padding: 40px;
+  background-color: #fff; /* optional for visibility */
+  flex-wrap: wrap; /* wrap for small screens */
+}
+
+.contact-left,
+.contact-right {
+  width: 45%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-right input,
+.contact-right textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.contact-right button {
+  background-color: #6F4E37;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.contact-right button:hover {
+  background-color: #5a3d2a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 90%;
+  }
+
+  .contact-right button {
+    align-self: center;
+    width: 100%;
+  }
+}
+
   #formMessage {
     margin-top: 10px;
     color: green;
