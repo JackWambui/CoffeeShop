@@ -25,52 +25,56 @@
             </div>
             <ul class="nav-links">
                 <!-- Employee Modal -->
-                <div id="employeeModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" onclick="closeEmployeeModal()">&times;</span>
-                        <h2>Add New Employee</h2>
-                        <form id="modalEmployeeForm">
-
-                            <div class="input-group">
-                                <label>First Name</label>
-                                <input type="text" id="modalFirstName" required>
-                            </div>
-                            <div class="input-group">
-                                <label>Last Name</label>
-                                <input type="text" id="modalLastName" required>
-                            </div>
-                            <div class="input-group">
-                                <label>Email</label>
-                                <input type="email" id="modalEmail" required>
-                            </div>
-                            <div class="input-group">
-                                <label>Password</label>
-                                <input type="password" id="modalConfirmPassword" required>
-                            </div>
-
-                            <div class="input-group">
-                                <label>Position</label>
-                                <select id="modalPosition" required>
-                                    <option value="">Select Position</option>
-                                    <option value="Manager">Manager</option>
-                                    <option value="Barista">Barista</option>
-                                    <option value="Cashier">Cashier</option>
-                                    <option value="Kitchen Staff">Kitchen Staff</option>
-                                    <option value="Dish Washer">Dish Washer</option>
-                                </select>
-                            </div>
-                            <div class="input-group">
-                                <label>Start Date</label>
-                                <input type="date" id="modalStartDate">
-                            </div>
-                            <div class="input-group">
-                                <button type="button" class="btn btn-success" onclick="submitModalEmployee()">Add
-                                    Employee</button>
-                            </div>
-                        </form>
-                    </div>
+                <!-- Move modal outside of nav -->
+<div id="employeeModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEmployeeModal()">&times;</span>
+        <h2>Add New Employee</h2>
+        <form id="modalEmployeeForm">
+            <div class="input-row">
+                <div class="input-group">
+                    <label>First Name</label>
+                    <input type="text" id="modalFirstName" required>
                 </div>
-
+                <div class="input-group">
+                    <label>Last Name</label>
+                    <input type="text" id="modalLastName" required>
+                </div>
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="modalEmail" required>
+                </div>
+                <div class="input-group">
+                    <label>Position</label>
+                    <select id="modalPosition" required>
+                        <option value="">Select Position</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Barista">Barista</option>
+                        <option value="Cashier">Cashier</option>
+                        <option value="Kitchen Staff">Kitchen Staff</option>
+                        <option value="Dish Washer">Dish Washer</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Start Date</label>
+                    <input type="date" id="modalStartDate">
+                </div>
+            </div>
+            
+            <div class="input-group" style="margin-top: 20px;">
+                <button type="button" class="btn btn-success" onclick="submitModalEmployee()">
+                    <i class="fas fa-plus"></i> Add Employee
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
                 <body>
 
                     <div class="logo-text">
