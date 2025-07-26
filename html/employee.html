@@ -101,21 +101,19 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h1>Employee Data Management</h1>
+   <div class="container">
+        <h1><i class="fas fa-users"></i> Employee Data Management</h1>
+        
         <div style="text-align: right; margin-bottom: 10px;">
             <button class="btn btn-success" onclick="openEmployeeModal()">
                 <i class="fas fa-plus"></i> Add Employee
             </button>
         </div>
 
-
-
         <div class="table-container">
             <table id="employeeTable">
                 <thead>
                     <tr>
-
                         <th>Employee ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -123,7 +121,8 @@
                         <th>Password</th>
                         <th>Position</th>
                         <th>Start Date</th>
-                        <th>Action</th>
+                        <th>Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="employeeTableBody">
@@ -133,17 +132,74 @@
         </div>
 
         <div class="pagination">
-            <button>Previous</button>
+            <button><i class="fas fa-chevron-left"></i> Previous</button>
             <button class="active">1</button>
             <button>2</button>
             <button>3</button>
             <span>...</span>
             <button>7</button>
-            <button>Next</button>
+            <button>Next <i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
-
-
+    
+    <!-- Employee Modal -->
+    <div id="employeeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEmployeeModal()">&times;</span>
+            <h2><i class="fas fa-user-plus"></i> Add New Employee</h2>
+            <form id="modalEmployeeForm">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="modalFirstName">First Name *</label>
+                        <input type="text" id="modalFirstName" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="modalLastName">Last Name *</label>
+                        <input type="text" id="modalLastName" required>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="modalEmail">Email *</label>
+                        <input type="email" id="modalEmail" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="modalPosition">Position *</label>
+                        <select id="modalPosition" required>
+                            <option value="">Select Position</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Barista">Barista</option>
+                            <option value="Cashier">Cashier</option>
+                            <option value="Kitchen Staff">Kitchen Staff</option>
+                            <option value="Dish Washer">Dish Washer</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="modalStartDate">Start Date</label>
+                        <input type="date" id="modalStartDate">
+                    </div>
+                    <div class="input-group">
+                        <label for="modalStatus">Status</label>
+                        <select id="modalStatus">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                            <option value="On Leave">On Leave</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-group" style="margin-top: 20px; text-align: center;">
+                    <button type="button" class="btn btn-success" onclick="submitModalEmployee()">
+                        <i class="fas fa-plus"></i> Add Employee
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="social-links">
