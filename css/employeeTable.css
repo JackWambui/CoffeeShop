@@ -14,14 +14,21 @@ body {
 
 
 nav {
-    display: flex;
+   display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 15px 0;
+    background-color: #f5e0cc;
+    
+    padding: 10px 20px;
 }
-
+.nav-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color:black;
+}
 .logo {
     display: flex;
     align-items: center;
@@ -48,10 +55,11 @@ nav {
     display: flex;
     list-style: none;
     gap: 25px;
+    color:black;
 }
 
 .nav-links li a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -202,11 +210,12 @@ input:focus, select:focus {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    color:black;
 }
 
 .btn-success {
     background: linear-gradient(135deg, #2ecc71, #27ae60);
-    color: white;
+    color: black;
 }
 
 .btn-success:hover {
