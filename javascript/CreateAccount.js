@@ -133,6 +133,9 @@ async function postCustomerInfor(){
 
     console.log(customerInformationObject);
 
+
+
+
 //     document.addEventListener("DOMContentLoaded", () => {
 //     const toggleIcons = document.querySelectorAll(".toggle-password");
 
@@ -155,6 +158,7 @@ async function postCustomerInfor(){
 
 
     // console.log(customerInformationObject);
+
 
 
     const urlCustomerLink = "../php/CreateAccount.php";
