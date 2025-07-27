@@ -15,21 +15,19 @@
 
         // $message = $jsonData;
 
-        $customerFirstNameDB = $jsonData["firstNamePHP"];
+        $customerUserNameDB = $jsonData["usernamePHP"];
         // $message = $customerFirstNameDB;
-        $sql = "INSERT INTO customers (customer_fname)
-        VALUES ('$customerFirstNameDB')";
+        $sql = "INSERT INTO customers (username)
+        VALUES ('$customerUserNameDB')";
 
-        //Dont use conn instead use connection
-        if ($connection->query($sql) === TRUE) {
-            $message = "New record created successfully";
-        } else {
-            $message = "Error";
-        }
+         $customerEmailDB = $jsonData["emailPHP"];
+        // $message = $customerFirstNameDB;
+        $sql = "INSERT INTO customers (email)
+        VALUES ('$customerEmailDB')";
+
+         $customerPasswordDB = $jsonData["passwordPHP"];
+        // $message = $customerFirstNameDB;
+        $sql = "INSERT INTO customers (password)
+        VALUES ('$customerPasswordDB')";
     }
-    
-    $array = array(
-        "message"=>$message
-    );
-    echo json_encode($array);
 ?>

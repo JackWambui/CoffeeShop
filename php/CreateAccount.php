@@ -15,10 +15,36 @@
 
         // $message = $jsonData;
 
+        $customerUserNameDB = $jsonData["usernamePHP"];
+        // $message = $customerLastNameDB;
+        $sql = "INSERT INTO customers (username)
+        VALUES ('$customerUserNameDB')";
+
         $customerFirstNameDB = $jsonData["firstNamePHP"];
         // $message = $customerFirstNameDB;
         $sql = "INSERT INTO customers (first_name)
         VALUES ('$customerFirstNameDB')";
+
+        $customerLastNameDB = $jsonData["lastNamePHP"];
+        // $message = $customerLastNameDB;
+        $sql = "INSERT INTO customers (last_name)
+        VALUES ('$customerLastNameDB')";
+
+        $customerEmailDB = $jsonData["emailPHP"];
+        // $message = $customerLastNameDB;
+        $sql = "INSERT INTO customers (email)
+        VALUES ('$customerEmailDB')";
+
+        $customerPasswordDB = $jsonData["passwordPHP"];
+        // $message = $customerLastNameDB;
+        $sql = "INSERT INTO customers (password)
+        VALUES ('$customerpasswordDB')";
+
+        $customerConfirmPasswordDB = $jsonData["confirmPasswordPHP"];
+        // $message = $customerLastNameDB;
+        $sql = "INSERT INTO customers (confirmpassword)
+        VALUES ('$customerConfirmPasswordDB')";
+        
 
         //Dont use conn instead use connection
         if ($connection->query($sql) === TRUE) {
