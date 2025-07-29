@@ -99,3 +99,9 @@ h1 {
     font-weight: bold;
     margin: 0;
 }
+ .dropbtn {
+    color: black;
+    font-weight: bold;
+    background-color: transparent; /* optional */
+    border: none; /* optional */
+}
