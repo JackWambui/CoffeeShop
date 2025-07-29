@@ -5,7 +5,7 @@
         $employeesResult = $connection->query( $employees);
         $employeesArray = array();
         if($employeesResult->num_rows > 0){
-            while($row=$employeesResult->fetch_assoc()){
+            while($rows=$employeesResult->fetch_assoc()){
                 $empIDDB = $rows["emp_Id"];
                 $empfirstnameDB = $rows["firstname"];
                 $emplastnameDB = $rows["lastname"];
