@@ -1,5 +1,5 @@
 
-const btnSigninpBtn = document.querySelector(".sign_in_btn");
+const btnSigninBtn = document.querySelector(".sign_in_btn");
 
 function handleCustomerInformation(event){
     event.preventDefault();
@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
 //Api Connection for sending data to php file from javaScript above
 async function postCustomerInfor(){
      //Variable declaration
-    const username = document.querySelector(".username").value.trim();
-    const email = document.querySelector(".Email").value.trim();
-    const password = document.querySelector(".password").value.trim();
+    const username = (document.querySelector(".username").value).trim();
+    const email = (document.querySelector(".Email").value).trim();
+    const password = (document.querySelector(".password").value).trim();
 
     const customerInformationObject = {
         usernamePHP:username,

@@ -21,4 +21,6 @@
 
         $preparedStmt1 = $connection->prepare("INSERT INTO customers(Customer_Username,Customer_EmailAddress,Customer_Password) VALUE (?,?,?)");
         }
+        $preparedStmt1->bind_param("sss",$customerUserNameDB,$customerEmailDB,$customerPassword);
+        $preparedStmt1->execute();
 ?>
