@@ -17,7 +17,7 @@ if ($requestType === "POST") {
       $customerPassword = password_hash($jsonData["passwordPHP"], PASSWORD_DEFAULT);
 
     //   $message = $customerPassword;
-    $selectQueryStmt = "SELECT * FROM customer WHERE username = '$customerUserNameDB' AND email = '$customerEmailDB' AND password = '$customerPassword'";
+    $selectQueryStmt = "SELECT * FROM customers WHERE username = '$customerUserNameDB' AND email = '$customerEmailDB' AND password = '$customerPassword'";
     $selectQueryStmtResult = $connection->query($selectQueryStmt);
 
     if($selectQueryStmtResult->num_rows > 0){
