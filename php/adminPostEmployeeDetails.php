@@ -4,10 +4,11 @@
     $requestType = $_SERVER["REQUEST_METHOD"];
     if($requestType === "POST"){
         // $message = "hello";
-        // $json = file_get_contents("php://input");
-        // $jsonData = json_decode($json,true);
+        $json = file_get_contents("php://input");
+        $jsonData = json_decode($json,true);
 
-        // $productNameDB        = htmlspecialchars(ucwords($jsonData["productNamePHP"]));
+        $FirstNameDB        = htmlspecialchars($jsonData["employeeFirstNamePHP"]);
+        $message = $jsonData;
         // $productPriceDB       = htmlspecialchars($jsonData["productPricePHP"]);
         // $productDescriptionDB = htmlspecialchars($jsonData["productPriceDescriptionPHP"]);
         // $productCategoryDB    = htmlspecialchars($jsonData["productCategoryPHP"]);
