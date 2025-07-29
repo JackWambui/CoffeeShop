@@ -7,12 +7,11 @@
         $json = file_get_contents("php://input");
         $jsonData = json_decode($json,true);
 
-        $FirstNameDB        = htmlspecialchars($jsonData["employeeFirstNamePHP"]);
-        $message =  $FirstNameDB ;
-        // $productPriceDB       = htmlspecialchars($jsonData["productPricePHP"]);
-        // $productDescriptionDB = htmlspecialchars($jsonData["productPriceDescriptionPHP"]);
-        // $productCategoryDB    = htmlspecialchars($jsonData["productCategoryPHP"]);
-        // $productImageDB       = htmlspecialchars($jsonData["productImagePHP"]);
+        $FirstNameDB     = htmlspecialchars($jsonData["employeeFirstNamePHP"]);
+        $LastNameDB      = htmlspecialchars($jsonData["employeeLastNamePHP"]);
+        $EmailDB         = htmlspecialchars($jsonData["employeeEmailPHP"]);
+        $PositionDB      = htmlspecialchars($jsonData["employeePositionPHP"]);
+        $StartDateDB     = htmlspecialchars($jsonData["employeeStartDatePHP"]);
 
         // $preparedQueryStmt1 = "SELECT product_name FROM products WHERE product_name = '$productNameDB'";
         // $preparedQueryResult1 = $connection->query($preparedQueryStmt1);
