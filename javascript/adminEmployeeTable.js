@@ -85,7 +85,7 @@ function getSelectedCategory(event){
     selectedPosition = target;
     // console.log(selectedCategory);
 }
-console.log(selectedPosition);
+// console.log(selectedPosition);
 
 positioninput.addEventListener("change",getSelectedCategory);
 
@@ -96,6 +96,8 @@ function submitModalEmployee() {
    const employeeEmail = document.querySelector(".js_Email").value;
    const employeePosition = document.querySelector(".js_Position").value;
    const employeeStartDate = document.querySelector(".js_StartDate").value;
+
+   console.log(selectedPosition);
 
     if (employeeFirstName  === "") {
         alert("Please fill in the First Name.");
