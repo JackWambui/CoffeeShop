@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Center</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/createAccount.css">
+    <link rel="stylesheet" href="../css/adminAccount.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/employeeTable.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #employeeTableBody img{
+            width:100%;
+            height:80px;
+            opacity: 1;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">
+                    <img src="../images/logo.jpeg" alt="A Cup of Inspiration">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <!-- Employee Modal -->
+                <div id="employeeModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeEmployeeModal()">&times;</span>
+                        <h2>Add New Category</h2>
+                        <form id="modalEmployeeForm">
+                            <div class="input-group">
+                                <label for="modalCategoryName">Name</label>
+                                <input type="text" id="modalCategoryName" class="js_category_name" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="modalImage">Image</label>
+                                <input type="file" id="modalImage" class="js_image" required>
+                            </div>
+                            <div class="input-group" id="js_preview_container" style="display:none;">
+                                <img alt="Image" class="js_preview_image">
+                            </div>
+                            <div class="input-group">
+                                <button type="button" class="btn btn-success" onclick="submitModalEmployee()">
+                                    Add Category 
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <body>
+
+                    <div class="logo-text">
+                        <a href="../html/admin.html">
+                            Home
+                        </a>
+                    </div>
+                    </div>
+                    <ul class="nav-links">
+
+                        <li class="dropdown">
+                            <button class="dropbtn">ADMIN ACCOUNT</button>
+                            <div class="dropdown-content">
+                                <a href="../html/adminSignIn.html">profile</a>
+                                <a href="../html/adminAccount.html">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="hamburger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Category Data Management</h1>
+        <div style="text-align: right; margin-bottom: 10px;">
+            <button class="btn btn-success" onclick="openEmployeeModal()">
+                <i class="fas fa-plus"></i> Add Category
+            </button>
+        </div>
+
+
+
+        <div class="table-container">
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Created At</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTableBody">
+                    <!-- Employee data will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <button>Previous</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <span>...</span>
+            <button>7</button>
+            <button>Next</button>
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="social-links">
+            <h3>Follow us:</h3>
+            <div class="icons">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; 2025 A Cup of Inspiration</p>
+        </div>
+    </footer>
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/getAllCategoriesInformation.js"></script>
+    <script src="../javascript/adminCategoryTable.js"></script>
+</body>
+
+</html>
