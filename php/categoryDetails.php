@@ -12,7 +12,8 @@
                 $categoryDBArray = array(
                     "id"    => (int)$row["category_id"],
                     "name"  => ucfirst($row["category_name"]),
-                    "image" => $row["image"]
+                    "image" => $row["image"],
+                    "createdAt" => $row["created_at"]
                 );   
                 array_push($categoryArray,$categoryDBArray);
             }
