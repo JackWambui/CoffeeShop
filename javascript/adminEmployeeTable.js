@@ -34,6 +34,7 @@ function closeEmployeeModal() {
 }
 
 // const productImage = document.querySelector(".js_image");
+const positioninput = document.querySelector(".js_Position");
 
 // // let imagePathURL;
 // let js_imageFile;
@@ -86,7 +87,7 @@ function getSelectedCategory(event){
 }
 console.log(selectedPosition);
 
-productCategory.addEventListener("change",getSelectedCategory);
+positioninput.addEventListener("change",getSelectedCategory);
 
 function submitModalEmployee() {
     const productForm = document.querySelector("#employeeModal");
