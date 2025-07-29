@@ -35,6 +35,6 @@ jsSubmitFeedbackBtn.addEventListener("click",postFeedback);
     });
     const responseData = await response.json();
 
-    console.log(responseData);
+    alert(responseData);
   }
   
