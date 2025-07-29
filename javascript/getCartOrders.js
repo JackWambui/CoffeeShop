@@ -152,8 +152,9 @@ if(ordersFeaturesContainer){
             const targetElement = event.target;
             let targetParentElement = targetElement.parentElement.parentElement;
             const tableRowId = parseInt(targetParentElement.getAttribute("data-id"),10);
+            // console.log(tableRowId);
             if(targetElement.classList.contains("edit-button")){
-                // console.log("edit");
+                editOrderInCart(shoppingCartFeat,tableRowId);
             }else if(targetElement.classList.contains("delete-button")){
                 targetParentElement.remove();
                 updateShoppingCartLocalStorage(tableRowId);
@@ -168,6 +169,101 @@ if(ordersFeaturesContainer){
         // emptyCartH2El.innerText = "The Cart is empty,Please go ahead and shop.";
         // ordersFeaturesContainer.append(emptyCartH2El);   
     }
+}
+
+
+function editOrderInCart(shoppingCartFeater,order_id){
+    getShoppingCartDetails().forEach(function(items_ordered){
+        let orderItemCartID = items_ordered.id;
+        let orderItemCartName = items_ordered.name;
+        let orderItemCartQuantity = items_ordered.quantity;
+        // console.log(items_ordered);
+        if(order_id === orderItemCartID){
+            const editDivEl = document.createElement("div");
+            editDivEl.className = "edit-pop-up-container";
+            const editFormEl = document.createElement("form");
+            editFormEl.className = "edit-cart-form";
+            const editFormHeading = document.createElement("h2");
+            const editFormHeadingTitle = document.createTextNode("Edit Order");
+            editFormHeading.append(editFormHeadingTitle);
+            editDivEl.append(editFormHeading);
+            editDivEl.append(editFormEl);
+            editFormEl.innerHTML = `
+            <div class="form-control js_order_id_info">
+                <label for="js_order_id">Order ID</label>
+                <input type="text" id="js_order_id" name="js_order_id_info" class="js_order_id_info" data_order_id="${orderItemCartID}" value="${orderItemCartID}" disabled>
+            </div>
+            <div class=form-control>
+                <label for="js_order_name">Name</label>
+                <input type="text" id="js_order_name" name="js_order_name_info"  class="js_order_name_info" value="${orderItemCartName}" disabled>
+            </div>
+            <div class=form-control>
+                <label for="js_order_quantity">Quantity</label>
+                <input type="text" id="js_order_quantity" name="js_order_quantity_info" class="js_order_quantity_info" value="${orderItemCartQuantity}">
+            </div>
+            <div class="form-control edit_cancel_btn_collection">
+                <input type="submit" class="js_submit_update_order_btn btn-success edit_cancel_order_button" value="Update">
+                <input type="button" class="js_cancel_update_order_btn btn-danger edit_cancel_order_button" value="Cancel">
+            </div>
+            `;
+            shoppingCartFeater.append(editDivEl);
+
+            const editCancelBtnCollection = document.querySelector(".edit_cancel_btn_collection");
+
+            editCancelBtnCollection.addEventListener("click",handleEditCancelOrderUpdate);
+        }
+    });
+    // console.log("yes");  
+}
+
+function handleEditCancelOrderUpdate(event){
+    event.preventDefault();
+    const targetElTriggered = event.target;
+    if(targetElTriggered.classList.contains("js_submit_update_order_btn")){
+        let orderIdEl = targetElTriggered.parentElement.previousElementSibling.previousElementSibling.previousElementSibling;
+        // console.log(orderIdEl);
+        if(orderIdEl.classList.contains("js_order_id_info")){
+            let cart_Order_ID = parseInt(orderIdEl.firstElementChild.nextElementSibling.getAttribute("data_order_id"),10);
+            updateOrderQty(cart_Order_ID);
+        }
+        // updateOrderQty();
+    }else if(targetElTriggered.classList.contains("js_cancel_update_order_btn")){
+        const formParentEl = targetElTriggered.parentElement.parentElement.parentElement;
+        if(formParentEl.classList.contains("edit-pop-up-container")){
+            formParentEl.remove();
+        } 
+    }
+}
+
+//Try Again - Handle both subtraction and addition scenarios 
+function updateOrderQty(order_id_value){
+     const updatedOrderQuantity = parseInt(document.querySelector(".js_order_quantity_info").value,10);
+    //  console.log(updatedOrderQuantity);
+    let newOrderItem;
+    getShoppingCartDetails().forEach(function(order_item_info){
+        // let orderCartQty = order_item_info.quantity;
+        if(order_id_value === order_item_info.id){
+            newOrderItem = order_item_info;
+            // orderCartQty += updatedOrderQuantity;
+            // console.log(order_item_info.quantity);
+        }
+    });
+
+    //Add if condition to handle addition and subtraction
+    newOrderItem.quantity += updatedOrderQuantity;
+
+    //Bad Code logic
+    let newCartArray = getShoppingCartDetails().filter(function(testOrder){
+        if(order_id_value !== testOrder.id){
+            return testOrder;
+        }
+    });
+    
+    newCartArray.push(newOrderItem);
+    // console.log(newCartArray);
+    localStorage.setItem("cart",JSON.stringify(newCartArray));
+    window.location.reload();
+    // console.log(newOrderItem);
 }
 
 
