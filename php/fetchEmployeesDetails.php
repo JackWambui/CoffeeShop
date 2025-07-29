@@ -37,7 +37,7 @@
         }else{
             echo "no data is available";
         }
-        $employeesInformation = json_encode($employeesArray );
+        $employeesInformation = json_encode($employeesArray);
         echo $employeesInformation;
     $connection->close();
 ?>
