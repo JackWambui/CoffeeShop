@@ -78,15 +78,15 @@ function closeEmployeeModal() {
 //     return ((productDescription.value).trim()).toLowerCase();
 // }
 
-// let selectedCategory;
-// function getSelectedCategory(event){
-//     let target = event.target.value;
-//     selectedCategory = parseInt(target,10);
-//     // console.log(selectedCategory);
-// }
-// console.log(selectedCategory);
+let selectedPosition;
+function getSelectedCategory(event){
+    let target = event.target.value;
+    selectedPosition = target;
+    // console.log(selectedCategory);
+}
+console.log(selectedPosition);
 
-// productCategory.addEventListener("change",getSelectedCategory);
+productCategory.addEventListener("change",getSelectedCategory);
 
 function submitModalEmployee() {
     const productForm = document.querySelector("#employeeModal");
@@ -108,7 +108,7 @@ function submitModalEmployee() {
         alert("Please fill in the Email.");
         return;
     }
-    else if( employeePosition === "" ||  employeePosition === undefined ||  employeePosition === NaN){
+    else if(selectedPosition=== "" || selectedPosition=== undefined || selectedPosition=== NaN){
         alert("Please select a Position.");
         return;
     }
@@ -134,7 +134,7 @@ async function postProductInformationtoDB(){
             employeeFirstNamePHP: employeeFirstName,
             employeeLastNamePHP:employeeLastName,
             employeeEmailPHP:employeeEmail,
-            employeePositionPHP:employeePosition,
+            employeePositionPHP:selectedPosition,
             employeeStartDatePHP:employeeStartDate
         }
 
