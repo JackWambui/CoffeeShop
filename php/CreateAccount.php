@@ -20,7 +20,7 @@
         $customerLastNameDB = $jsonData["lastNamePHP"];
         $customerEmailDB = $jsonData["emailPHP"];
         $sql = "INSERT INTO customers (Customer_Username, Customer_FName, Customer_LName, Customer_EmailAddress)
-                VALUES (?, ?, ?, ?, ?)";
+                VALUES (?, ?, ?, ?)";
         $stmt = $connection->prepare($sql);
         $stmt->bind_param("sssss", $customerUserNameDB, $customerFirstNameDB, $customerLastNameDB, $customerEmailDB);
         $stmt->execute();
