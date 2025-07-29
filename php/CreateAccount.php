@@ -21,9 +21,14 @@ if ($requestType === "POST") {
       $customerFirstNameDB = $jsonData["firstNamePHP"];
       $customerLastNameDB = $jsonData["lastNamePHP"];
       $customerEmailDB = $jsonData["emailPHP"];
-      $customerPassword = $jsonData["passwordPHP"];
+      $customerPassword = password_hash($jsonData["passwordPHP"], PASSWORD_DEFAULT);
+
       $message = $customerPassword;
-    
+
+      $preparedStmt1 = $connection->prepare("INSERT INTO customers(Customer_Username,Customer_FName,Customer_LName,Customer_EmailAddress,Customer_Password) VALUE (?,?,?,?,?)");
+      $preparedStmt1->bind_param("sssss",$customerUserNameDB,$customerFirstNameDB,$customerLastNameDB,$customerEmailDB,$customerPassword);
+      $preparedStmt1->execute();
+      $message = "Account created successfully!";
     
     // $customerEmailDB = $jsonData["emailPHP"];
     // $customerPassword = $jsonData["passwordPHP"];
@@ -43,6 +48,9 @@ if ($requestType === "POST") {
     //     http_response_code(500);
     //     $response["message"] = "Error creating account.";
     // }
+
+
+
 
     // $stmt->close();
     $resultArray = array(
