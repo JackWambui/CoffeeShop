@@ -6,12 +6,12 @@
         $message;
         $json = file_get_contents("php://input");
         $jsonData = json_decode($json,true);
- $message = $jsonData;
-        // $customerNameDB        = htmlspecialchars(ucwords($jsonData["customerNamePHP"]));
-        // $customerEmailDB       = htmlspecialchars($jsonData["customerEmailPHP"]);
-        // $customerPhoneDB       = htmlspecialchars($jsonData["customerPhonePHP"]);
-        // $customerMessageDB     = htmlspecialchars($jsonData["customerMessagePHP"]);
-        // $message =  $customerMessageDB 
+        // $message = $jsonData;
+        $customerNameDB        = htmlspecialchars(ucwords($jsonData["customerNamePHP"]));
+        $customerEmailDB       = htmlspecialchars($jsonData["customerEmailPHP"]);
+        $customerPhoneDB       = htmlspecialchars($jsonData["customerPhonePHP"]);
+        $customerMessageDB     = htmlspecialchars($jsonData["customerMessagePHP"]);
+        $message =  $customerMessageDB; 
         // $customerMessageDB     = htmlspecialchars($jsonData["customerMessagePHP"]);
 
         // $preparedQueryStmt2 = $connection->prepare("INSERT INTO reviews(customer_name,customer_email,customer_phone,customer_message) VALUE (?,?,?,?)");
