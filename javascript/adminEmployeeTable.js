@@ -96,83 +96,81 @@ function submitModalEmployee() {
    const employeePosition = document.querySelector(".js_Position").value;
    const employeeStartDate = document.querySelector(".js_StartDate").value;
 
-   console.log(employeeFirstName);
-
     if (employeeFirstName  === "") {
         alert("Please fill in the First Name.");
         return false;
     }
-    // else if(employeeLastName  === ""){
-    //     alert("Please fill in the Last Name.");
-    //     return;
-    // }
-    // else if(employeeEmail === ""){
-    //     alert("Please fill in the Email.");
-    //     return;
-    // }
-    // else if( employeePosition === "" ||  employeePosition === undefined ||  employeePosition === NaN){
-    //     alert("Please select a Position.");
-    //     return;
-    // }
-    // else if(employeeStartDate  === "" || employeeStartDate  === undefined){
-    //     alert("Please select Start date.");
-    //     return false;
-    // }
+    else if(employeeLastName  === ""){
+        alert("Please fill in the Last Name.");
+        return;
+    }
+    else if(employeeEmail === ""){
+        alert("Please fill in the Email.");
+        return;
+    }
+    else if( employeePosition === "" ||  employeePosition === undefined ||  employeePosition === NaN){
+        alert("Please select a Position.");
+        return;
+    }
+    else if(employeeStartDate  === "" || employeeStartDate  === undefined){
+        alert("Please select Start date.");
+        return false;
+    }
 
-    // postProductInformationtoDB();
+    postProductInformationtoDB();
     closeEmployeeModal();
 }
 
 
-// async function postProductInformationtoDB(){
-//     try{
-//          const employeeFirstName = document.querySelector(".js_FirstName").value;
-//         const employeeLastName = document.querySelector(".js_LastName").value;
-//         const employeeEmail = document.querySelector(".js_Email").value;
-//         const employeePosition = document.querySelector(".js_Position").value;
-//         const employeeStartDate = document.querySelector(".js_StartDate").value;
+async function postProductInformationtoDB(){
+    try{
+         const employeeFirstName = document.querySelector(".js_FirstName").value;
+        const employeeLastName = document.querySelector(".js_LastName").value;
+        const employeeEmail = document.querySelector(".js_Email").value;
+        const employeePosition = document.querySelector(".js_Position").value;
+        const employeeStartDate = document.querySelector(".js_StartDate").value;
 
-//         const employeeDetailsObj = {
-//             employeeFirstNamePHP: employeeFirstName,
-//             employeeLastNamePHP:employeeLastName,
-//             employeeEmailPHP:employeeEmail,
-//             employeePositionPHP:employeePosition,
-//             employeeStartDatePHP:employeeStartDate
-//         }
+        const employeeDetailsObj = {
+            employeeFirstNamePHP: employeeFirstName,
+            employeeLastNamePHP:employeeLastName,
+            employeeEmailPHP:employeeEmail,
+            employeePositionPHP:employeePosition,
+            employeeStartDatePHP:employeeStartDate
+        }
 
-//         console.log(employeeDetailsObj);
+        console.log(employeeDetailsObj);
 
-//         // console.log(productDetailsObj);
+        // console.log(productDetailsObj);
 
-//         //Refactor Code - Remember
-//         const productDetailsURLLink = "../php/adminPostEmployeeDetails.php";
-//         const response = await fetch(productDetailsURLLink,{
-//             method:"POST",
-//             headers:{
-//                 "Content-Type":"application/json"
-//             },
-//             body:JSON.stringify(employeeDetailsObj)
-//         });
+        //Refactor Code - Remember
+        const productDetailsURLLink = "../php/adminPostEmployeeDetails.php";
+        const response = await fetch(productDetailsURLLink,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(employeeDetailsObj)
+        });
 
-//         if(!response.ok){
-//             throw new Error(`The error status is ${response.status} and message is ${response.statusText}`);
-//         }
+        if(!response.ok){
+            throw new Error(`The error status is ${response.status} and message is ${response.statusText}`);
+        }
 
-//         const responseInformation = await response.json();
-//         // console.log(responseInformation);
-//         let result;
-//         for(let responseData in responseInformation){
-//             result = responseInformation[responseData];
-//         }
+        const responseInformation = await response.json();
+        // console.log(responseInformation);
+        let result;
+        for(let responseData in responseInformation){
+            result = responseInformation[responseData];
+        }
 
-//         alert(`${result}`);
-//         window.location.reload();
-//     }catch(error){
-//         console.log(error.message);
-//     }
+        alert(`${result}`);
+        window.location.reload();
+    }catch(error){
+        console.log(error.message);
+    }
     
-//     // console.log(categoryDetailsObj);
-// }
+    // console.log(categoryDetailsObj);
+}
 
 // async function getProductInformation(){
 //     const productInfo = await getAllProductsInformation();
