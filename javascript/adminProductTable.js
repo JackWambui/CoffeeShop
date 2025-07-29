@@ -165,7 +165,7 @@ async function postCategoryInformationtoDB(){
     // console.log(categoryDetailsObj);
 }
 
-async function getCategoryInformation(){
+async function getProductInformation(){
     const categoryInfo = await getAllProductsInformation();
     console.log(categoryInfo);
     const tbodyElement = document.querySelector("#employeeTableBody");
@@ -196,4 +196,4 @@ async function getCategoryInformation(){
 
 /*<img src="${newImageCheck ? image : "false"}" alt="${name}">*/
 // getCategoryInformation();
-window.addEventListener("load",getCategoryInformation);
+window.addEventListener("load",getProductInformation);
