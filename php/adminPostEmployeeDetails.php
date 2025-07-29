@@ -13,7 +13,13 @@
         $PositionDB      = htmlspecialchars($jsonData["employeePositionPHP"]);
         $StartDateDB     = htmlspecialchars($jsonData["employeeStartDatePHP"]);
 
-        $message = "Employee Details Added successfully";
+
+         $preparedQueryStmt2 = $connection->prepare("INSERT INTO employee(firstname,lastname,email,position,Start_date) VALUE (?,?,?,?,?)");
+         $preparedQueryStmt2->bind_param("sssss", $FirstNameDB,$LastNameDB,$EmailDB,$PositionDB,$StartDateDB);
+         $preparedQueryStmt2->execute();
+         $message = "$FirstNameDB $LastNameDB added successfully.";
+
+        // $message = "Employee Details Added successfully";
 
         // $preparedQueryStmt1 = "SELECT product_name FROM products WHERE product_name = '$productNameDB'";
         // $preparedQueryResult1 = $connection->query($preparedQueryStmt1);
