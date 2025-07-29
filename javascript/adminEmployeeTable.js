@@ -178,8 +178,8 @@ async function postProductInformationtoDB(){
 
 async function getEmployeesDetails(){
     const employeesDetailsURL = "../php/fetchEmployeesDetails.php";
-    const response = fetch(employeesDetailsURL);
-    const responseData = response.json();
+    const response = await fetch(employeesDetailsURL);
+    const responseData = await  response.json();
     console.log(responseData);
 }
 
