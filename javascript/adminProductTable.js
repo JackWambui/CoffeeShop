@@ -1,21 +1,3 @@
-// Add a new employee
-// function addEmployee() {
-//     const form = document.querySelector("#employeeModal");
-//     const categoryName = document.querySelector(".");
-//     const categoryImage = document.querySelector(".");
-   
-
-//     if (!categoryName || !categoryImage) {
-//     alert("Please fill in all required fields");
-//     return;
-//     }
-    
-//     // Reset form
-//     form.reset();   
-//     // Show success message
-//     alert("Employee added successfully!");
-// }
-                
 // Save edited employee
 function saveEmployee(button) {
     
@@ -51,7 +33,7 @@ function closeEmployeeModal() {
   document.getElementById("employeeModal").style.display = "none";
 }
 
-const categoryImage = document.querySelector(".js_image");
+const productImage = document.querySelector(".js_image");
 
 // let imagePathURL;
 let js_imageFile;
@@ -65,84 +47,101 @@ function getImagePath(event){
     const previewImage = document.querySelector(".js_preview_image");
     previewImage.style.width = "100%";
     previewImage.style.height = "auto";
-
-    // console.log(file);
-    // let imagePathURL;
     if(file){
-        // const newImagePath = URL.createObjectURL(file);
-        // imagePathURL = newImagePath;
         js_imageFile = file.name;
         previewImage.src = `../images/${js_imageFile}`;
     }
-    // console.log(imagePathURL);
-    // finalImagePath =  imagePathURL;
 }
 
 // console.log(imagePathURL);
 
-categoryImage.addEventListener("change",getImagePath);
+productImage.addEventListener("change",getImagePath);
 
-const categoryName = document.querySelector(".js_category_name");
+const productName = document.querySelector(".js_product_name");
+const productPrice = document.querySelector(".js_product_price");
+const productDescription = document.querySelector(".js_product_description");
+const productCategory = document.querySelector(".js_category_info");
 
 
 //Helper Function - DRY(Don't Repeat Yourself)
-function getCategoryValue(){
-    return ((categoryName.value).trim()).toLowerCase();
+function getProductNameValue(){
+    return ((productName.value).trim()).toLowerCase();
 }
+
+function getProductPriceValue(){
+    return ((productPrice.value).trim()).toLowerCase();
+}
+
+function getProductDescriptionValue(){
+    return ((productDescription.value).trim()).toLowerCase();
+}
+
+let selectedCategory;
+function getSelectedCategory(event){
+    let target = event.target.value;
+    selectedCategory = parseInt(target,10);
+    // console.log(selectedCategory);
+}
+// console.log(selectedCategory);
+
+productCategory.addEventListener("change",getSelectedCategory);
 
 function submitModalEmployee() {
-    const categoryForm = document.querySelector("#employeeModal");
-    let categoryNameValue = getCategoryValue();
+    const productForm = document.querySelector("#employeeModal");
+    let productNameValue        = getProductNameValue();
+    let productPriceValue       = getProductPriceValue();
+    let productDescriptionValue = getProductDescriptionValue();
 
-    // //Image add test
-    // const jsTestImage = document.querySelector(".testImage");
-    // jsTestImage.src = imagePathURL;
-    // console.log(jsTestImage);
-    // categoryForm.append(jsTestImage);
-    // console.log(categoryName);
-
-    if (categoryNameValue === "") {
-        alert("Please fill in the Category Name Field");
+    if (productNameValue === "") {
+        alert("Please fill in the Product Name Field.");
         return false;
+    }
+    else if(productPriceValue === ""){
+        alert("Please fill in the Product Price.");
+        return;
+    }
+    else if(productDescriptionValue === ""){
+        alert("Please fill in the Product Description.");
+        return;
+    }
+    else if(selectedCategory === "" || selectedCategory === undefined || selectedCategory === NaN){
+        alert("Please select a Category.");
+        return;
     }
     else if(js_imageFile === "" || js_imageFile === undefined){
-        alert("Please Upload Category Image");
+        alert("Please Upload Product Image");
         return false;
     }
 
-    postCategoryInformationtoDB();
-
-    // const categoryDetailsObj = {
-    //     categoryNamePHP:categoryNameValue,
-    //     categoryImagePHP:js_imageFile
-    // }
-
-    // console.log(categoryDetailsObj);
-    // console.log(imagePathURL);
-    // console.log(js_imageFile);
-
-
-      
-  closeEmployeeModal();
-//   alert("Category added successfully!");
+    postProductInformationtoDB();
+    closeEmployeeModal();
 }
 
 
-async function postCategoryInformationtoDB(){
+async function postProductInformationtoDB(){
     try{
-        let categoryNameValue = getCategoryValue();
-        const categoryDetailsObj = {
-            categoryNamePHP:categoryNameValue,
-            categoryImagePHP:js_imageFile
+        let productNameValue = getProductNameValue();
+        let productPriceValue       = getProductPriceValue();
+        let productDescriptionValue = getProductDescriptionValue();
+
+        const productDetailsObj = {
+            productNamePHP:productNameValue,
+            productPricePHP:parseFloat(productPriceValue),
+            productPriceDescriptionPHP:productDescriptionValue,
+            productCategoryPHP:selectedCategory,
+            productImagePHP:js_imageFile
         }
+
+        // console.log(productDetailsObj);
+
         //Refactor Code - Remember
-        const categoryDetailsURLLink = "../php/adminPostCategoryDetails.php";
-        const response = await fetch(categoryDetailsURLLink,{
+        const productDetailsURLLink = "../php/adminPostProductDetails.php";
+        const response = await fetch(productDetailsURLLink,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify(categoryDetailsObj)
+            body:JSON.stringify(productDetailsObj)
         });
 
         if(!response.ok){
@@ -165,25 +164,32 @@ async function postCategoryInformationtoDB(){
     // console.log(categoryDetailsObj);
 }
 
-async function getCategoryInformation(){
-    const categoryInfo = await getAllCategoriesInformation();
-    console.log(categoryInfo);
+async function getProductInformation(){
+    const productInfo = await getAllProductsInformation();
+    // console.log(productInfo);
     const tbodyElement = document.querySelector("#employeeTableBody");
     
-    categoryInfo.forEach(function(categ){
-        let id = categ.id;
-        let name = categ.name;
-        let image = categ.image;
-        let createdAt = categ.createdAt;
-        let imagePathCheck = image.includes("http");
+    productInfo.forEach(function(produ,index){
+        let id = produ.id;
+        let name = produ.name;
+        let image = produ.image;
+        let price = (produ.price).toFixed(2);
+        let description = produ.description;
+        let categoryId = produ.category;
+        let categoryName = produ.category_name;
+        let createdAt = produ.createdAt;
+        let imagePathCheck = image.includes("https");
         // console.log(newImageCheck);
         const trElement = document.createElement("tr");
         trElement.innerHTML = `
-            <td>${id}</td>        
+            <td>${index+=1}</td>        
             <td>${name}</td>
             <td>                
                 <img src="${imagePathCheck ? image : '../images/'+image}" alt="${name}">
             </td>
+            <td>${price}</td>
+            <td>${description}</td>
+            <td>${categoryName}</td>
             <td>${createdAt}</td>
             <td>
                 <button class="btn btn-primary" onclick="editEmployee(this)"><i class="fas fa-edit"></i> Edit</button>
@@ -194,6 +200,22 @@ async function getCategoryInformation(){
     });
 }
 
-/*<img src="${newImageCheck ? image : "false"}" alt="${name}">*/
-// getCategoryInformation();
-window.addEventListener("load",getCategoryInformation);
+async function getCategoryNameInfo(){
+    const categoryInformation = await getAllCategoriesInformation();
+    // console.log(categoryInformation);
+    const categorySelectEl = document.querySelector(".js_category_info");
+    categoryInformation.forEach(function(catego){
+       const categoryOptionEl = document.createElement("option");
+       categoryOptionEl.setAttribute("value",catego.id);
+       categoryOptionEl.innerText = `${catego.name}`;
+       categorySelectEl.append(categoryOptionEl);
+    });
+    // console.log(categorySelectEl);
+}
+
+getCategoryNameInfo();
+
+// getProductInformation();
+window.addEventListener("load",getProductInformation);
+
+
