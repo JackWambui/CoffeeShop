@@ -98,6 +98,7 @@ const jsSubmitFeedbackBtn = document.querySelector(".submitExperience-btns");
 jsSubmitFeedbackBtn.addEventListener("click",postFeedback);
 
 function postFeedback(){
+    console.log("heelo");
     postFeedbacktoDB();
 }
 
