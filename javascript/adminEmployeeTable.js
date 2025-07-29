@@ -175,6 +175,16 @@ async function postProductInformationtoDB(){
     // console.log(categoryDetailsObj);
 }
 
+
+async function getEmployeesDetails(){
+    const employeesDetailsURL = "../php/fetchEmployeesDetails.php";
+    const response = fetch(employeesDetailsURL);
+    const responseData = response.json();
+    console.log(responseData);
+}
+
+ getEmployeesDetails();
+
 // async function getProductInformation(){
 //     const productInfo = await getAllProductsInformation();
 //     // console.log(productInfo);
