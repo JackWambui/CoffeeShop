@@ -35,6 +35,11 @@ jsSubmitFeedbackBtn.addEventListener("click",postFeedback);
     });
     const responseData = await response.json();
 
-    alert(responseData);
+    let responseInfor;
+
+    for(let infor in responseData){
+        responseInfor = responseData[infor];
+    }
+    alert(responseInfor);
   }
   
