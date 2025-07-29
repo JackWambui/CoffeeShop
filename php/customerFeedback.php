@@ -11,13 +11,13 @@
         $customerEmailDB       = htmlspecialchars($jsonData["customerEmailPHP"]);
         $customerPhoneDB       = htmlspecialchars($jsonData["customerPhonePHP"]);
         $customerMessageDB     = htmlspecialchars($jsonData["customerMessagePHP"]);
-        $message =  $customerMessageDB; 
+        // $message =  $customerMessageDB; 
         // $customerMessageDB     = htmlspecialchars($jsonData["customerMessagePHP"]);
 
-        // $preparedQueryStmt2 = $connection->prepare("INSERT INTO reviews(customer_name,customer_email,customer_phone,customer_message) VALUE (?,?,?,?)");
-        // $preparedQueryStmt2->bind_param("ssdsi",$customerNameDB,$customerEmailDB,$customerPhoneDB,$customerMessageDB);
-        // $preparedQueryStmt2->execute();
-        // $message = "Feedback saved successfully.One of our customer representatives will be in touch!";
+        $preparedQueryStmt2 = $connection->prepare("INSERT INTO reviews(customer_name,customer_email,customer_phone,customer_message) VALUE (?,?,?,?)");
+        $preparedQueryStmt2->bind_param("ssdsi",$customerNameDB,$customerEmailDB,$customerPhoneDB,$customerMessageDB);
+        $preparedQueryStmt2->execute();
+        $message = "Feedback saved successfully.One of our customer representatives will be in touch!";
         
         $resultArray = array(
             "message"=>$message
