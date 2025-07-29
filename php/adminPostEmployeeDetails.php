@@ -15,7 +15,7 @@
         $message = $StartDateDB;
 
 
-         $preparedQueryStmt2 = $connection->prepare("INSERT INTO employee(firstname,lastname,email,position,Start_date) VALUE (?,?,?,?,?)");
+         $preparedQueryStmt2 = $connection->prepare("INSERT INTO employees(firstname,lastname,email,position,Start_date) VALUE (?,?,?,?,?)");
          $preparedQueryStmt2->bind_param("sssss", $FirstNameDB,$LastNameDB,$EmailDB,$PositionDB,$StartDateDB);
          $preparedQueryStmt2->execute();
          $message = "Employee details added successfully.";
