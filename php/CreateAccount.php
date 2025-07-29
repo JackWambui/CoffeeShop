@@ -41,6 +41,7 @@ if ($requestType === "POST") {
     $resultArray = array(
         "message"=>$message
     );
+    echo json_encode($resultArray);
 }
 // } else {
 //     http_response_code(405);
