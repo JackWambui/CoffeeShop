@@ -116,6 +116,8 @@ jsSubmitFeedbackBtn.addEventListener("click",postFeedback);
         customerMessagePHP:customerMessage
     };
 
+    console.log(feedbackObje);
+
     const URLFeedbackLink = "../php/customerFeedback.php";
     const response = await fetch(URLFeedbackLink,{
         method:"POST",
