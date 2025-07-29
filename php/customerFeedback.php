@@ -8,8 +8,8 @@
         $jsonData = json_decode($json,true);
 
         $customerNameDB        = htmlspecialchars(ucwords($jsonData["customerNamePHP"]));
-        $message = $customerNameDB;
-        // $customerEmailDB       = htmlspecialchars($jsonData["customerEmailPHP"]);
+        $customerEmailDB       = htmlspecialchars($jsonData["customerEmailPHP"]);
+        $message =  $customerEmailDB;
         // $customerPhoneDB       = htmlspecialchars($jsonData["customerPhonePHP"]);
         // $customerMessageDB     = htmlspecialchars($jsonData["customerMessagePHP"]);
 
