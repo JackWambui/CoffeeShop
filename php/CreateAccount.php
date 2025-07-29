@@ -20,9 +20,10 @@ if ($requestType === "POST") {
     $customerUserNameDB = $jsonData["usernamePHP"];
       $customerFirstNameDB = $jsonData["firstNamePHP"];
       $customerLastNameDB = $jsonData["lastNamePHP"];
-    $message = $customerLastNameDB;
+      $customerEmailDB = $jsonData["emailPHP"];
+    $message = $customerEmailDB;
     
-    // $customerLastNameDB = $jsonData["lastNamePHP"];
+    
     // $customerEmailDB = $jsonData["emailPHP"];
     // $customerPassword = $jsonData["passwordPHP"];
 
