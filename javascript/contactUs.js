@@ -92,4 +92,40 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 3000);
     });
   });
+
+const jsSubmitFeedbackBtn = document.querySelector(".submitExperience-btns");
+
+jsSubmitFeedbackBtn.addEventListener("click",postFeedback);
+
+function postFeedback(){
+    postFeedbacktoDB();
+}
+
+jsSubmitFeedbackBtn.addEventListener("click",postFeedback);
+
+  async function postFeedbacktoDB(){
+    const customerName = document.querySelector(".js_name").value.trim();
+    const customerEmail = document.querySelector(".js_email").value.trim();
+    const customerPhone = document.querySelector(".js_phone").value.trim();
+    const customerMessage = document.querySelector(".js_message").value.trim();
+
+    const feedbackObje = {
+        customerNamePHP:customerName,
+        customerEmailPHP:customerEmail,
+        customerPhonePHP:customerPhone,
+        customerMessagePHP:customerMessage
+    };
+
+    const URLFeedbackLink = "../php/customerFeedback.php";
+    const response = await fetch(URLFeedbackLink,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(feedbackObje)
+    });
+    const responseData = await response.json();
+
+    console.log(responseData);
+  }
   
