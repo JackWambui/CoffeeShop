@@ -34,6 +34,7 @@ function closeEmployeeModal() {
 }
 
 // const productImage = document.querySelector(".js_image");
+// const positioninput = document.querySelector(".js_Position");
 
 // // let imagePathURL;
 // let js_imageFile;
@@ -77,16 +78,16 @@ function closeEmployeeModal() {
 // function getProductDescriptionValue(){
 //     return ((productDescription.value).trim()).toLowerCase();
 // }
-
+const positioninput = document.querySelector(".js_Position");
 let selectedPosition;
 function getSelectedCategory(event){
     let target = event.target.value;
     selectedPosition = target;
     // console.log(selectedCategory);
 }
-console.log(selectedPosition);
+// console.log(selectedPosition);
 
-productCategory.addEventListener("change",getSelectedCategory);
+positioninput.addEventListener("change",getSelectedCategory);
 
 function submitModalEmployee() {
     const productForm = document.querySelector("#employeeModal");
@@ -95,6 +96,8 @@ function submitModalEmployee() {
    const employeeEmail = document.querySelector(".js_Email").value;
    const employeePosition = document.querySelector(".js_Position").value;
    const employeeStartDate = document.querySelector(".js_StartDate").value;
+
+   console.log(selectedPosition);
 
     if (employeeFirstName  === "") {
         alert("Please fill in the First Name.");
