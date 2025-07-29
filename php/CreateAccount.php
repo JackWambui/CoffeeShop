@@ -7,16 +7,24 @@ $response = [];
 
 if ($requestType === "POST") {
     // Extract form data from POST
-    $customerUserNameDB = $_POST["username"];
-    $customerFirstNameDB = $_POST["First Name"];
-    $customerLastNameDB = $_POST["Last Name"];
-    $customerEmailDB = $_POST["Email"];
+    $json = file_get_contents("php://input");
+    $jsonData = json_decode($json,true);
+    // $customerUserNameDB = $_POST["username"];
+    // $customerFirstNameDB = $_POST["First Name"];
+    // $customerLastNameDB = $_POST["Last Name"];
+    // $customerEmailDB = $_POST["Email"];
+
+    $customerUserNameDB = $jsonData["usernamePHP"];
+    $customerFirstNameDB = $jsonData["firstNamePHP"];
+    $customerLastNameDB = $jsonData["lastNamePHP"];
+    $customerEmailDB = $jsonData["emailPHP"];
+    $customerPassword = $jsonData["passwordPHP"];
 
     // Prepare SQL statement
-    $sql = "INSERT INTO customers (Customer_Username, Customer_FName, Customer_LName, Customer_EmailAddress)
-            VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO customers (Customer_Username, Customer_FName, Customer_LName, Customer_EmailAddress,Customer_Password)
+            VALUES (?, ?, ?, ?,?)";
     $stmt = $connection->prepare($sql);
-    $stmt->bind_param("ssss", $customerUserNameDB, $customerFirstNameDB, $customerLastNameDB, $customerEmailDB);
+    $stmt->bind_param("sssss", $customerUserNameDB, $customerFirstNameDB, $customerLastNameDB, $customerEmailDB,$customerPassword);
 
     // Execute and respond
     if ($stmt->execute()) {
