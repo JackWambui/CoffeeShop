@@ -8,10 +8,10 @@
         $jsonData = json_decode($json,true);
 
         $FirstNameDB     = htmlspecialchars($jsonData["employeeFirstNamePHP"]);
-        $LastNameDB      = htmlspecialchars($jsonData["employeeLastNamePHP"]);
-        $EmailDB         = htmlspecialchars($jsonData["employeeEmailPHP"]);
-        $PositionDB      = htmlspecialchars($jsonData["employeePositionPHP"]);
-        $StartDateDB     = htmlspecialchars($jsonData["employeeStartDatePHP"]);
+        // $LastNameDB      = htmlspecialchars($jsonData["employeeLastNamePHP"]);
+        // $EmailDB         = htmlspecialchars($jsonData["employeeEmailPHP"]);
+        // $PositionDB      = htmlspecialchars($jsonData["employeePositionPHP"]);
+        // $StartDateDB     = htmlspecialchars($jsonData["employeeStartDatePHP"]);
 
         // $preparedQueryStmt1 = "SELECT product_name FROM products WHERE product_name = '$productNameDB'";
         // $preparedQueryResult1 = $connection->query($preparedQueryStmt1);
