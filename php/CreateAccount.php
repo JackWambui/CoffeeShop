@@ -18,18 +18,19 @@ if ($requestType === "POST") {
     // $message = $jsonData;
 
     $customerUserNameDB = $jsonData["usernamePHP"];
-    $customerFirstNameDB = $jsonData["firstNamePHP"];
-    $customerLastNameDB = $jsonData["lastNamePHP"];
-    $customerEmailDB = $jsonData["emailPHP"];
-    $customerPassword = $jsonData["passwordPHP"];
+    $message = $customerUserNameDB;
+    // $customerFirstNameDB = $jsonData["firstNamePHP"];
+    // $customerLastNameDB = $jsonData["lastNamePHP"];
+    // $customerEmailDB = $jsonData["emailPHP"];
+    // $customerPassword = $jsonData["passwordPHP"];
 
     // // Prepare SQL statement
-    $sql = "INSERT INTO customers (Customer_Username, Customer_FName, Customer_LName, Customer_EmailAddress,Customer_Password)
-            VALUES (?, ?, ?, ?,?)";
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param("sssss", $customerUserNameDB, $customerFirstNameDB, $customerLastNameDB, $customerEmailDB,$customerPassword);
-    $stmt->execute();
-    $message = "Account created successfully!";
+    // $sql = "INSERT INTO customers (Customer_Username,Customer_FName,Customer_LName,Customer_EmailAddress,Customer_Password)
+    //         VALUES (?, ?, ?, ?,?)";
+    // $stmt = $connection->prepare($sql);
+    // $stmt->bind_param("sssss", $customerUserNameDB,$customerFirstNameDB,$customerLastNameDB,$customerEmailDB,$customerPassword);
+    // $stmt->execute();
+    // $message = "Account created successfully!";
 
     // // Execute and respond
     // if ($stmt->execute()) {
