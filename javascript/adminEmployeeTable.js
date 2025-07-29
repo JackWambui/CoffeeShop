@@ -33,35 +33,35 @@ function closeEmployeeModal() {
   document.getElementById("employeeModal").style.display = "none";
 }
 
-const productImage = document.querySelector(".js_image");
+// const productImage = document.querySelector(".js_image");
 
-// let imagePathURL;
-let js_imageFile;
+// // let imagePathURL;
+// let js_imageFile;
 
 
-function getImagePath(event){
-    const file = event.target.files[0];
-    const previewContainer = document.querySelector("#js_preview_container");
-    previewContainer.style.display = "block";
-    previewContainer.style.width = "220px";
-    const previewImage = document.querySelector(".js_preview_image");
-    previewImage.style.width = "100%";
-    previewImage.style.height = "auto";
-    if(file){
-        js_imageFile = file.name;
-        previewImage.src = `../images/${js_imageFile}`;
-    }
-}
+// function getImagePath(event){
+//     const file = event.target.files[0];
+//     const previewContainer = document.querySelector("#js_preview_container");
+//     previewContainer.style.display = "block";
+//     previewContainer.style.width = "220px";
+//     const previewImage = document.querySelector(".js_preview_image");
+//     previewImage.style.width = "100%";
+//     previewImage.style.height = "auto";
+//     if(file){
+//         js_imageFile = file.name;
+//         previewImage.src = `../images/${js_imageFile}`;
+//     }
+// }
 
-// console.log(imagePathURL);
+// // console.log(imagePathURL);
 
-productImage.addEventListener("change",getImagePath);
+// productImage.addEventListener("change",getImagePath);
 
-const employeeFirstName = document.querySelector(".js_FirstName").value;
-const employeeLastName = document.querySelector(".js_LastName").value;
-const employeeEmail = document.querySelector(".js_Email").value;
-const employeePosition = document.querySelector(".js_Position").value;
-const employeeStartDate = document.querySelector(".js_StartDate").value;
+// const employeeFirstName = document.querySelector(".js_FirstName").value;
+// const employeeLastName = document.querySelector(".js_LastName").value;
+// const employeeEmail = document.querySelector(".js_Email").value;
+// const employeePosition = document.querySelector(".js_Position").value;
+// const employeeStartDate = document.querySelector(".js_StartDate").value;
 
 
 
@@ -78,15 +78,15 @@ const employeeStartDate = document.querySelector(".js_StartDate").value;
 //     return ((productDescription.value).trim()).toLowerCase();
 // }
 
-let selectedCategory;
-function getSelectedCategory(event){
-    let target = event.target.value;
-    selectedCategory = parseInt(target,10);
-    // console.log(selectedCategory);
-}
+// let selectedCategory;
+// function getSelectedCategory(event){
+//     let target = event.target.value;
+//     selectedCategory = parseInt(target,10);
+//     // console.log(selectedCategory);
+// }
 // console.log(selectedCategory);
 
-productCategory.addEventListener("change",getSelectedCategory);
+// productCategory.addEventListener("change",getSelectedCategory);
 
 function submitModalEmployee() {
     const productForm = document.querySelector("#employeeModal");
