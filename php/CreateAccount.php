@@ -18,7 +18,8 @@ if ($requestType === "POST") {
     // $message = $jsonData;
 
     $customerUserNameDB = $jsonData["usernamePHP"];
-    $message = $customerUserNameDB;
+      $customerFirstNameDB = $jsonData["firstNamePHP"];
+    $message = $customerFirstNameDB;
     // $customerFirstNameDB = $jsonData["firstNamePHP"];
     // $customerLastNameDB = $jsonData["lastNamePHP"];
     // $customerEmailDB = $jsonData["emailPHP"];
