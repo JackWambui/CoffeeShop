@@ -57,24 +57,26 @@ function getImagePath(event){
 
 productImage.addEventListener("change",getImagePath);
 
-const productName = document.querySelector(".js_product_name");
-const productPrice = document.querySelector(".js_product_price");
-const productDescription = document.querySelector(".js_product_description");
-const productCategory = document.querySelector(".js_category_info");
+const employeeFirstName = document.querySelector(".js_FirstName").value;
+const employeeLastName = document.querySelector(".js_LastName").value;
+const employeeEmail = document.querySelector(".js_Email").value;
+const employeePosition = document.querySelector(".js_Position").value;
+const employeeStartDate = document.querySelector(".js_StartDate").value;
 
 
-//Helper Function - DRY(Don't Repeat Yourself)
-function getProductNameValue(){
-    return ((productName.value).trim()).toLowerCase();
-}
 
-function getProductPriceValue(){
-    return ((productPrice.value).trim()).toLowerCase();
-}
+// //Helper Function - DRY(Don't Repeat Yourself)
+// function getProductNameValue(){
+//     return ((productName.value).trim()).toLowerCase();
+// }
 
-function getProductDescriptionValue(){
-    return ((productDescription.value).trim()).toLowerCase();
-}
+// function getProductPriceValue(){
+//     return ((productPrice.value).trim()).toLowerCase();
+// }
+
+// function getProductDescriptionValue(){
+//     return ((productDescription.value).trim()).toLowerCase();
+// }
 
 let selectedCategory;
 function getSelectedCategory(event){
@@ -88,28 +90,30 @@ productCategory.addEventListener("change",getSelectedCategory);
 
 function submitModalEmployee() {
     const productForm = document.querySelector("#employeeModal");
-    let productNameValue        = getProductNameValue();
-    let productPriceValue       = getProductPriceValue();
-    let productDescriptionValue = getProductDescriptionValue();
+   const employeeFirstName = document.querySelector(".js_FirstName").value;
+   const employeeLastName = document.querySelector(".js_LastName").value;
+   const employeeEmail = document.querySelector(".js_Email").value;
+   const employeePosition = document.querySelector(".js_Position").value;
+   const employeeStartDate = document.querySelector(".js_StartDate").value;
 
-    if (productNameValue === "") {
-        alert("Please fill in the Product Name Field.");
+    if (employeeFirstName  === "") {
+        alert("Please fill in the First Name.");
         return false;
     }
-    else if(productPriceValue === ""){
-        alert("Please fill in the Product Price.");
+    else if(employeeLastName  === ""){
+        alert("Please fill in the Last Name.");
         return;
     }
-    else if(productDescriptionValue === ""){
-        alert("Please fill in the Product Description.");
+    else if(employeeEmail === ""){
+        alert("Please fill in the Email.");
         return;
     }
-    else if(selectedCategory === "" || selectedCategory === undefined || selectedCategory === NaN){
-        alert("Please select a Category.");
+    else if( employeePosition === "" ||  employeePosition === undefined ||  employeePosition === NaN){
+        alert("Please select a Position.");
         return;
     }
-    else if(js_imageFile === "" || js_imageFile === undefined){
-        alert("Please Upload Product Image");
+    else if(employeeStartDate  === "" || employeeStartDate  === undefined){
+        alert("Please select Start date.");
         return false;
     }
 
@@ -120,13 +124,15 @@ function submitModalEmployee() {
 
 async function postProductInformationtoDB(){
     try{
-        let productNameValue = getProductNameValue();
-        let productPriceValue       = getProductPriceValue();
-        let productDescriptionValue = getProductDescriptionValue();
+         const employeeFirstName = document.querySelector(".js_FirstName").value;
+        const employeeLastName = document.querySelector(".js_LastName").value;
+        const employeeEmail = document.querySelector(".js_Email").value;
+        const employeePosition = document.querySelector(".js_Position").value;
+        const employeeStartDate = document.querySelector(".js_StartDate").value;
 
-        const productDetailsObj = {
-            productNamePHP:productNameValue,
-            productPricePHP:parseFloat(productPriceValue),
+        const employeetDetailsObj = {
+            productNamePHP: employeeFirstName,
+            productPricePHP:productPriceValue,
             productPriceDescriptionPHP:productDescriptionValue,
             productCategoryPHP:selectedCategory,
             productImagePHP:js_imageFile
