@@ -9,8 +9,8 @@
 
         $customerNameDB        = htmlspecialchars(ucwords($jsonData["customerNamePHP"]));
         $customerEmailDB       = htmlspecialchars($jsonData["customerEmailPHP"]);
-        $message =  $customerEmailDB;
-        // $customerPhoneDB       = htmlspecialchars($jsonData["customerPhonePHP"]);
+        $customerPhoneDB       = htmlspecialchars($jsonData["customerPhonePHP"]);
+        $message =  $customerPhoneDB;
         // $customerMessageDB     = htmlspecialchars($jsonData["customerMessagePHP"]);
 
         // $preparedQueryStmt2 = $connection->prepare("INSERT INTO reviews(customer_name,customer_email,customer_phone,customer_message) VALUE (?,?,?,?)");
