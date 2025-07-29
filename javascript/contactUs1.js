@@ -11,10 +11,10 @@ function postFeedback(event){
 jsSubmitFeedbackBtn.addEventListener("click",postFeedback);
 
   async function postFeedbacktoDB(){
-    const customerName = document.querySelector(".js_name").value.trim();
-    const customerEmail = document.querySelector(".js_email").value.trim();
-    const customerPhone = document.querySelector(".js_phone").value.trim();
-    const customerMessage = document.querySelector(".js_message").value.trim();
+    const customerName    = document.querySelector(".js_name").value;
+    const customerEmail   = document.querySelector(".js_email").value;
+    const customerPhone   = document.querySelector(".js_phone").value;
+    const customerMessage = document.querySelector(".js_message").value;
 
     const feedbackObje = {
         customerNamePHP:customerName,
