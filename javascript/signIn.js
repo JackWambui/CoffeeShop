@@ -1,4 +1,3 @@
-
 const btnSigninBtns = document.querySelector(".sign_in_btn");
 
 function handleCustomerInformation(event){
@@ -6,72 +5,46 @@ function handleCustomerInformation(event){
     //Calling our Api here
     postCustomerInfor();
     // console.log("hello");
+    // console.log("hello");
 }
 
 btnSigninBtns.addEventListener("click",handleCustomerInformation);
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     // Toggle password visibility
-//     const toggleIcons = document.querySelectorAll(".toggle-password");
+//Api Connection for sending data to php file from javaScript above
+async function postCustomerInfor(){
+     //Variable declaration
+    const username = (document.querySelector(".username").value).trim();
+    const email = (document.querySelector(".Email").value).trim();
+    const password = (document.querySelector(".Password").value).trim();
 
-//     toggleIcons.forEach(icon => {
-//         icon.addEventListener("click", () => {
-//             const inputSelector = icon.getAttribute("toggle");
-//             const passwordInput = document.querySelector(inputSelector);
+    const customerInformationObject = {
+        usernamePHP:username,
+        emailPHP:email,
+        passwordPHP:password
+    };
 
-//             if (passwordInput) {
-//                 const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-//                 passwordInput.setAttribute("type", type);
+    console.log(customerInformationObject);
 
-//                 icon.classList.toggle("fa-eye");
-//                 icon.classList.toggle("fa-eye-slash");
-//             }
-//         });
-//     });
 
-//     // 
+
+    const urlCustomerLink = "../php/signIn.php";
     
-// });
+    //Gets the fetch api response
+    const response = await fetch(urlCustomerLink,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(customerInformationObject)
+    });
 
-// //Api Connection for sending data to php file from javaScript above
-// async function postCustomerInfor(){
-//      //Variable declaration
-//     const username = (document.querySelector(".username").value).trim();
-//     const email = (document.querySelector(".Email").value).trim();
-//     const password = (document.querySelector(".Password").value).trim();
+    const responseData = await response.json();
+    console.log(responseData);
+    // console.log(responseData);
+    // for(let key in responseData){
+    //     alert(responseData[key]);
+    // }
+    window.location.href ="../html/menu.html";
 
-//     const customerInformationObject = {
-//         usernamePHP:username,
-//         emailPHP:email,
-//         passwordPHP:password
-//     };
-
-//     console.log(customerInformationObject);
-
-
-
-//     const urlCustomerLink = "../php/SignIn.php";
-    
-//     //Gets the fetch api response
-//     const response = await fetch(urlCustomerLink,{
-//         method:"POST",
-//         headers:{
-//             "Content-Type":"application/json"
-//         },
-//         body:JSON.stringify(customerInformationObject)
-//     });
-
-//     const responseData = await response.json();
-//     console.log(responseData);
-//     // console.log(responseData);
-//     // for(let key in responseData){
-//     //     alert(responseData[key]);
-//     // }
-//     window.location.href ="../html/menu.html";
-
-// }
-
-// btnSigninBtn.addEventListener("click",handleCustomerInformation);
-
-
+}

@@ -12,19 +12,21 @@ if ($requestType === "POST") {
     $json = file_get_contents("php://input");
     $jsonData = json_decode($json,true);
 
+    $message = "hello";
+
       $customerUserNameDB = $jsonData["usernamePHP"];
       $customerEmailDB = $jsonData["emailPHP"];
       $customerPassword = password_hash($jsonData["passwordPHP"], PASSWORD_DEFAULT);
 
     //   $message = $customerPassword;
-    $selectQueryStmt = "SELECT * FROM customers WHERE username = '$customerUserNameDB' AND email = '$customerEmailDB' AND password = '$customerPassword'";
-    $selectQueryStmtResult = $connection->query($selectQueryStmt);
+    // $selectQueryStmt = "SELECT * FROM customers WHERE username = '$customerUserNameDB' AND email = '$customerEmailDB' AND password = '$customerPassword'";
+    // $selectQueryStmtResult = $connection->query($selectQueryStmt);
 
-    if($selectQueryStmtResult->num_rows > 0){
-        $message = "$categoryName already exists.Please add another category.";
-    }else{
-        $message = "Invalid Details.Please Try Again!!";
-    }
+    // if($selectQueryStmtResult->num_rows > 0){
+    //     $message = "$categoryName already exists.Please add another category.";
+    // }else{
+    //     $message = "Invalid Details.Please Try Again!!";
+    // }
     // $message = "$categoryName already exists.Please add another category.";
 
     //   $preparedStmt1 = $connection->prepare("INSERT INTO customers(Customer_Username,Customer_FName,Customer_LName,Customer_EmailAddress,Customer_Password) VALUE (?,?,?,?,?)");
