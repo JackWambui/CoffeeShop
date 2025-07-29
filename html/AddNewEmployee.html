@@ -17,19 +17,19 @@
     <form id="newEmployeeForm" action="employeeTable.html" method="POST">
       <div class="input-group">
         <label for="firstName">First Name</label>
-        <input type="text" name="firstName" id="firstName" required>
+        <input type="text" name="firstName" id="firstName"  class="js_FirstName" required>
       </div>
       <div class="input-group">
         <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" id="lastName" required>
+        <input type="text" name="lastName" id="lastName" class="js_lastName" required>
       </div>
       <div class="input-group">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" class="js_email" required>
       </div>
       <div class="input-group">
         <label for="position">Position</label>
-        <select name="position" id="position" required>
+        <select name="position" id="position" class="js_position" required>
           <option value="">Select Position</option>
           <option value="Manager">Manager</option>
           <option value="Barista">Barista</option>
@@ -40,10 +40,10 @@
       </div>
       <div class="input-group">
         <label for="startDate">Start Date</label>
-        <input type="date" name="startDate" id="startDate">
+        <input type="date" name="startDate" id="startDate" class="js_startDate" required>
       </div>
       <div class="input-group">
-        <button type="submit" class="btn btn-success">Add Employee</button>
+        <button type="submit" class="btn btn-success js_submit_employee">Add Employee</button>
       </div>
     </form>
   </div>
