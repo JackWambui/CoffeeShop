@@ -8,7 +8,7 @@
         $jsonData = json_decode($json,true);
 
         $FirstNameDB        = htmlspecialchars($jsonData["employeeFirstNamePHP"]);
-        $message = $jsonData;
+        $message =  $FirstNameDB ;
         // $productPriceDB       = htmlspecialchars($jsonData["productPricePHP"]);
         // $productDescriptionDB = htmlspecialchars($jsonData["productPriceDescriptionPHP"]);
         // $productCategoryDB    = htmlspecialchars($jsonData["productCategoryPHP"]);
