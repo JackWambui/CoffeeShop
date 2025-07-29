@@ -12,12 +12,13 @@
         $EmailDB         = htmlspecialchars($jsonData["employeeEmailPHP"]);
         $PositionDB      = htmlspecialchars($jsonData["employeePositionPHP"]);
         $StartDateDB     = htmlspecialchars($jsonData["employeeStartDatePHP"]);
+        $message = $StartDateDB;
 
 
-         $preparedQueryStmt2 = $connection->prepare("INSERT INTO employee(firstname,lastname,email,position,Start_date) VALUE (?,?,?,?,?)");
+         $preparedQueryStmt2 = $connection->prepare("INSERT INTO employees(firstname,lastname,email,position,Start_date) VALUE (?,?,?,?,?)");
          $preparedQueryStmt2->bind_param("sssss", $FirstNameDB,$LastNameDB,$EmailDB,$PositionDB,$StartDateDB);
          $preparedQueryStmt2->execute();
-         $message = "$FirstNameDB $LastNameDB added successfully.";
+         $message = "Employee details added successfully.";
 
         // $message = "Employee Details Added successfully";
 
