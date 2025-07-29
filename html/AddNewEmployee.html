@@ -30,7 +30,7 @@
     <div class="modal-content">
         <span class="close" onclick="closeEmployeeModal()">&times;</span>
         <h2>Add New Employee</h2>
-        <form id="modalEmployeeForm">
+        <!-- <form id="modalEmployeeForm">
             <div class="input-row">
                 <div class="input-group">
                     <label>First Name</label>
@@ -72,7 +72,58 @@
                     <i class="fas fa-plus"></i> Add Employee
                 </button>
             </div>
-        </form>
+        </form> -->
+     <form id="modalEmployeeForm">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="modalFirstName">First Name *</label>
+                        <input type="text" id="modalFirstName" class="js_FirstName" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="modalLastName">Last Name *</label>
+                        <input type="text" id="modalLastName" class="js_LastName" required>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="modalEmail">Email *</label>
+                        <input type="email" id="modalEmail" class= "js_Email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="modalPosition">Position *</label>
+                        <select id="modalPosition" class="js_Position" required>
+                            <option value="">Select Position</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Barista">Barista</option>
+                            <option value="Cashier">Cashier</option>
+                            <option value="Kitchen Staff">Kitchen Staff</option>
+                            <option value="Dish Washer">Dish Washer</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="modalStartDate">Start Date</label>
+                        <input type="date" id="modalStartDate" class ="js_StartDate" required>
+                    </div>
+                    <!-- <div class="input-group">
+                        <label for="modalStatus">Status</label>
+                        <select id="modalStatus">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                            <option value="On Leave">On Leave</option>
+                        </select>
+                    </div> -->
+                </div>
+                
+                <div class="input-group" style="margin-top: 20px; text-align: center;">
+                    <button type="button" class="btn btn-success" onclick="submitModalEmployee()">
+                        <i class="fas fa-plus"></i> Add Employee
+                    </button>
+                </div>
+            </form>
     </div>
 </div>
                 <body>
