@@ -175,6 +175,44 @@ async function postProductInformationtoDB(){
     // console.log(categoryDetailsObj);
 }
 
+
+async function getEmployeesDetails(){
+    const employeesDetailsURL = "../php/fetchEmployeesDetails.php";
+    const response = await fetch(employeesDetailsURL);
+    const responseData = await  response.json();
+    const tbodyElement = document.querySelector("#employeeTableBody");
+    
+    responseData.forEach(function(empl,index){
+        let id = empl.emp_Id;
+        let firstname = empl.empfirstname;
+        let lastname = empl.emplastname;
+        let email = empl.empemail;
+        let position = empl.empposition;
+        let startDate = empl.empStart_date;    
+        let createdAt = empl.createdAt;
+   
+        // console.log(newImageCheck);
+        const trElement = document.createElement("tr");
+        trElement.innerHTML = `
+            <td>${index+=1}</td>        
+            <td>${firstname}</td>
+            <td>${lastname}</td>
+            <td>${email}</td>
+            <td>${position}</td>
+            <td>${startDate }</td>
+            <td>${createdAt}</td>
+            <td>
+                <button class="btn btn-primary" onclick="editEmployee(this)"><i class="fas fa-edit"></i> Edit</button>
+                <button class="btn btn-danger" onclick="deleteEmployee(this)"><i class="fas fa-trash"></i> Delete</button>
+            </td>
+        `;
+        tbodyElement.append(trElement);
+    });
+    // console.log(responseData);
+}
+
+ getEmployeesDetails();
+
 // async function getProductInformation(){
 //     const productInfo = await getAllProductsInformation();
 //     // console.log(productInfo);
