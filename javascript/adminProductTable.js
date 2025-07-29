@@ -136,7 +136,7 @@ async function postCategoryInformationtoDB(){
             categoryImagePHP:js_imageFile
         }
         //Refactor Code - Remember
-        const categoryDetailsURLLink = "../php/adminPostCategoryDetails.php";
+        const categoryDetailsURLLink = "../php/adminPostProductDetails.php";
         const response = await fetch(categoryDetailsURLLink,{
             method:"POST",
             headers:{
@@ -175,6 +175,7 @@ async function getProductInformation(){
         let name = categ.name;
         let image = categ.image;
         let price = categ.price;
+        let description = categ.description;
         let createdAt = categ.createdAt;
         let imagePathCheck = image.includes("http");
         // console.log(newImageCheck);
@@ -186,6 +187,7 @@ async function getProductInformation(){
                 <img src="${imagePathCheck ? image : '../images/'+image}" alt="${name}">
             </td>
             <td>${price.toFixed(2)}</td>
+            <td>${description}</td>
             <td>${createdAt}</td>
             <td>
                 <button class="btn btn-primary" onclick="editEmployee(this)"><i class="fas fa-edit"></i> Edit</button>
