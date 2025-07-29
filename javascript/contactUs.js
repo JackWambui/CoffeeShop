@@ -97,7 +97,8 @@ const jsSubmitFeedbackBtn = document.querySelector(".submitExperience-btns");
 
 jsSubmitFeedbackBtn.addEventListener("click",postFeedback);
 
-function postFeedback(){
+function postFeedback(event){
+    event.preventDefault();
     console.log("heelo");
     postFeedbacktoDB();
 }
