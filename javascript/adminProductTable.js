@@ -176,6 +176,7 @@ async function getProductInformation(){
         let image = categ.image;
         let price = categ.price;
         let description = categ.description;
+        let categoryID = categ.category;
         let createdAt = categ.createdAt;
         let imagePathCheck = image.includes("http");
         // console.log(newImageCheck);
@@ -188,6 +189,7 @@ async function getProductInformation(){
             </td>
             <td>${price.toFixed(2)}</td>
             <td>${description}</td>
+            <td>${categoryID}</td>
             <td>${createdAt}</td>
             <td>
                 <button class="btn btn-primary" onclick="editEmployee(this)"><i class="fas fa-edit"></i> Edit</button>
