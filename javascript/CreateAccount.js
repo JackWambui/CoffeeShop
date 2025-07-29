@@ -1,5 +1,5 @@
 
-const btnSigninpBtn = document.querySelector(".sign_in_btn");
+const btnSignupBtn = document.querySelector(".sign_up_btn");
 
 function handleCustomerInformation(event){
     event.preventDefault();
@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
 //Api Connection for sending data to php file from javaScript above
 async function postCustomerInfor(){
      //Variable declaration
-    const username = document.querySelector(".username").value.trim();
-    const firstName = document.querySelector(".firstName").value.trim();
+    const username = (document.querySelector(".username").value).trim();
+    const firstName = (document.querySelector(".firstName").value).trim();
     // console.log(firstName);
-    const lastName = document.querySelector(".lastName").value.trim();
-    const email = document.querySelector(".Email").value.trim();
-    const password = document.querySelector(".password").value.trim();
-    const confirmPassword = document.querySelector(".confirmPassword").value.trim();
+    const lastName = (document.querySelector(".lastName").value).trim();
+    const email = (document.querySelector(".Email").value).trim();
+    const password = (document.querySelector(".password").value).trim();
+    const confirmPassword = (document.querySelector(".confirmPassword").value).trim();
 
     const customerInformationObject = {
         usernamePHP:username,
@@ -77,6 +77,6 @@ async function postCustomerInfor(){
 }
 
 
-btnSigninBtn.addEventListener("click",handleCustomerInformation);
+btnSignupBtn.addEventListener("click",handleCustomerInformation);
 
 
