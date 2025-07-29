@@ -13,7 +13,6 @@
                 $emppositionDB = $rows["position"];
                 $empStart_dateDB = $rows["Start_date"];
                 $empcreated_atDB = $rows["created_at"];
-                $empupdatedDB = $rows["updated"];
 
                  $EmpDetailFromDB = array(
                     "emp_Id"     => (int)$empIDDB,
@@ -21,7 +20,8 @@
                     "emplastname" =>$emplastnameDB,
                     "empemail" =>$empemailDB,
                     "empposition" =>$emppositionDB,
-                    "empStart_date" =>$empStart_dateDB,  
+                    "empStart_date" =>$empStart_dateDB, 
+                    "createdAt"=>$empcreated_atDB
                 );
              
 
