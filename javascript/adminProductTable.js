@@ -185,7 +185,7 @@ async function getProductInformation(){
             <td>                
                 <img src="${imagePathCheck ? image : '../images/'+image}" alt="${name}">
             </td>
-            <td>${price}</td>
+            <td>${price.toFixed(2)}</td>
             <td>${createdAt}</td>
             <td>
                 <button class="btn btn-primary" onclick="editEmployee(this)"><i class="fas fa-edit"></i> Edit</button>
