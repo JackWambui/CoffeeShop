@@ -17,11 +17,12 @@ if ($requestType === "POST") {
     // $customerEmailDB = $_POST["Email"];
     // $message = $jsonData;
 
-    $customerUserNameDB = $jsonData["usernamePHP"];
+      $customerUserNameDB = $jsonData["usernamePHP"];
       $customerFirstNameDB = $jsonData["firstNamePHP"];
       $customerLastNameDB = $jsonData["lastNamePHP"];
       $customerEmailDB = $jsonData["emailPHP"];
-    $message = $customerEmailDB;
+      $customerPassword = $jsonData["passwordPHP"];
+      $message = $customerPassword;
     
     
     // $customerEmailDB = $jsonData["emailPHP"];
