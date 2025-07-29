@@ -166,7 +166,7 @@ async function postCategoryInformationtoDB(){
 }
 
 async function getCategoryInformation(){
-    const categoryInfo = await getAllCategoriesInformation();
+    const categoryInfo = await getAllProductsInformation();
     console.log(categoryInfo);
     const tbodyElement = document.querySelector("#employeeTableBody");
     
