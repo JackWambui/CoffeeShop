@@ -1,5 +1,5 @@
 
-const btnSignupBtn = document.querySelector(".sign_in_btn");
+const btnSigninBtn = document.querySelector(".sign_in_btn");
 
 function handleCustomerInformation(event){
     event.preventDefault();
@@ -70,6 +70,6 @@ async function postCustomerInfor(){
 
 }
 
-btnSignupBtn.addEventListener("click",handleCustomerInformation);
+btnSigninBtn.addEventListener("click",handleCustomerInformation);
 
 
