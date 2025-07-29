@@ -34,7 +34,7 @@ function closeEmployeeModal() {
 }
 
 // const productImage = document.querySelector(".js_image");
-const positioninput = document.querySelector(".js_Position");
+// const positioninput = document.querySelector(".js_Position");
 
 // // let imagePathURL;
 // let js_imageFile;
@@ -78,7 +78,7 @@ const positioninput = document.querySelector(".js_Position");
 // function getProductDescriptionValue(){
 //     return ((productDescription.value).trim()).toLowerCase();
 // }
-
+const positioninput = document.querySelector(".js_Position");
 let selectedPosition;
 function getSelectedCategory(event){
     let target = event.target.value;
