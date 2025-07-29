@@ -1,5 +1,5 @@
 
-const btnSigninBtn = document.querySelector(".sign_in_btn");
+const btnSigninBtns = document.querySelector(".sign_in_btn");
 
 function handleCustomerInformation(event){
     event.preventDefault();
@@ -8,7 +8,7 @@ function handleCustomerInformation(event){
     // console.log("hello");
 }
 
-btnSigninBtn.addEventListener("click",handleCustomerInformation);
+btnSigninBtns.addEventListener("click",handleCustomerInformation);
 
 
 // document.addEventListener("DOMContentLoaded", () => {
