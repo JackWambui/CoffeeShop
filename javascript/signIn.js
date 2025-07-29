@@ -1,5 +1,5 @@
 
-const btnSigninBtn = document.querySelector(".sign_in_btn");
+const btnSignupBtn = document.querySelector(".sign_in_btn");
 
 function handleCustomerInformation(event){
     event.preventDefault();
@@ -37,13 +37,12 @@ async function postCustomerInfor(){
      //Variable declaration
     const username = (document.querySelector(".username").value).trim();
     const email = (document.querySelector(".Email").value).trim();
-    const password = (document.querySelector(".password").value).trim();
+    const password = (document.querySelector(".Password").value).trim();
 
     const customerInformationObject = {
         usernamePHP:username,
         emailPHP:email,
-        passwordPHP:password,
-
+        passwordPHP:password
     };
 
     console.log(customerInformationObject);
@@ -62,12 +61,15 @@ async function postCustomerInfor(){
     });
 
     const responseData = await response.json();
+    console.log(responseData);
     // console.log(responseData);
-    for(let key in responseData){
-        alert(responseData[key]);
-    }
+    // for(let key in responseData){
+    //     alert(responseData[key]);
+    // }
     window.location.href ="../html/menu.html";
+
 }
 
+btnSignupBtn.addEventListener("click",handleCustomerInformation);
 
-btnSigninBtn.addEventListener("click",handleCustomerInformation);
+
