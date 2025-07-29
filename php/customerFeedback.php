@@ -15,7 +15,7 @@
         // $customerMessageDB     = htmlspecialchars($jsonData["customerMessagePHP"]);
 
         $preparedQueryStmt2 = $connection->prepare("INSERT INTO reviews(customer_name,customer_email,customer_phone,customer_message) VALUE (?,?,?,?)");
-        $preparedQueryStmt2->bind_param("ssdsi",$customerNameDB,$customerEmailDB,$customerPhoneDB,$customerMessageDB);
+        $preparedQueryStmt2->bind_param("ssis",$customerNameDB,$customerEmailDB,$customerPhoneDB,$customerMessageDB);
         $preparedQueryStmt2->execute();
         $message = "Feedback saved successfully.One of our customer representatives will be in touch!";
         
