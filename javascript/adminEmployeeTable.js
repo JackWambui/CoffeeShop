@@ -130,24 +130,26 @@ async function postProductInformationtoDB(){
         const employeePosition = document.querySelector(".js_Position").value;
         const employeeStartDate = document.querySelector(".js_StartDate").value;
 
-        const employeetDetailsObj = {
-            productNamePHP: employeeFirstName,
-            productPricePHP:productPriceValue,
-            productPriceDescriptionPHP:productDescriptionValue,
-            productCategoryPHP:selectedCategory,
-            productImagePHP:js_imageFile
+        const employeeDetailsObj = {
+            employeeFirstNamePHP: employeeFirstName,
+            employeeLastNamePHP:employeeLastName,
+            employeeEmailPHP:employeeEmail,
+            employeePositionPHP:employeePosition,
+            employeeStartDatePHP:employeeStartDate
         }
+
+        console.log(employeeDetailsObj);
 
         // console.log(productDetailsObj);
 
         //Refactor Code - Remember
-        const productDetailsURLLink = "../php/adminPostProductDetails.php";
+        const productDetailsURLLink = "../php/adminPostEmployeeDetails.php";
         const response = await fetch(productDetailsURLLink,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify(productDetailsObj)
+            body:JSON.stringify(employeeDetailsObj)
         });
 
         if(!response.ok){
