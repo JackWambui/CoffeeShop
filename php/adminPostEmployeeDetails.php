@@ -3,7 +3,7 @@
     header("Content-Type:application/json");
     $requestType = $_SERVER["REQUEST_METHOD"];
     if($requestType === "POST"){
-        $message = "hello";
+        // $message = "hello";
         // $json = file_get_contents("php://input");
         // $jsonData = json_decode($json,true);
 

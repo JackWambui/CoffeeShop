@@ -143,28 +143,28 @@ async function postProductInformationtoDB(){
         // console.log(productDetailsObj);
 
         //Refactor Code - Remember
-        const productDetailsURLLink = "../php/adminPostEmployeeDetails.php";
-        const response = await fetch(productDetailsURLLink,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(employeeDetailsObj)
-        });
+        // const productDetailsURLLink = "../php/adminPostEmployeeDetails.php";
+        // const response = await fetch(productDetailsURLLink,{
+        //     method:"POST",
+        //     headers:{
+        //         "Content-Type":"application/json"
+        //     },
+        //     body:JSON.stringify(employeeDetailsObj)
+        // });
 
-        if(!response.ok){
-            throw new Error(`The error status is ${response.status} and message is ${response.statusText}`);
-        }
+        // if(!response.ok){
+        //     throw new Error(`The error status is ${response.status} and message is ${response.statusText}`);
+        // }
 
-        const responseInformation = await response.json();
-        // console.log(responseInformation);
-        let result;
-        for(let responseData in responseInformation){
-            result = responseInformation[responseData];
-        }
+        // const responseInformation = await response.json();
+        // // console.log(responseInformation);
+        // let result;
+        // for(let responseData in responseInformation){
+        //     result = responseInformation[responseData];
+        // }
 
-        alert(`${result}`);
-        window.location.reload();
+        // alert(`${result}`);
+        // window.location.reload();
     }catch(error){
         console.log(error.message);
     }
