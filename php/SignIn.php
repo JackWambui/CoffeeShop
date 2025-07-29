@@ -6,28 +6,19 @@
     //Gets the type of method being sent in the api
     $requestType = $_SERVER["REQUEST_METHOD"];
     // $requestType = "POST";
-    
-    $message;
-    if($requestType === "POST"){
-        // $message = "Hello there";
+
+
+    if ($requestType === "POST") {
+        // Extract form data from POST
         $json = file_get_contents("php://input");
         $jsonData = json_decode($json,true);
 
-        // $message = $jsonData;
-
         $customerUserNameDB = $jsonData["usernamePHP"];
-        // $message = $customerFirstNameDB;
-        $sql = "INSERT INTO customers (username)
-        VALUES ('$customerUserNameDB')";
+        $customerEmailDB = $jsonData["emailPHP"];
+        $customerPassword = password_hash($jsonData["passwordPHP"], PASSWORD_DEFAULT);
 
-         $customerEmailDB = $jsonData["emailPHP"];
-        // $message = $customerFirstNameDB;
-        $sql = "INSERT INTO customers (email)
-        VALUES ('$customerEmailDB')";
+        $message = $customerPassword;
 
-         $customerPasswordDB = $jsonData["passwordPHP"];
-        // $message = $customerFirstNameDB;
-        $sql = "INSERT INTO customers (password)
-        VALUES ('$customerPasswordDB')";
-    }
+        $preparedStmt1 = $connection->prepare("INSERT INTO customers(Customer_Username,Customer_EmailAddress,Customer_Password) VALUE (?,?,?)");
+        }
 ?>
