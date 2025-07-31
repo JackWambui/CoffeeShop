@@ -69,4 +69,3 @@ if ($requestType === "POST") {
 
 // echo json_encode($response);
 ?>
-
