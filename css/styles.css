@@ -150,6 +150,12 @@ nav {
     font-weight: 700;
 }
 
+.btn-tertiary{
+    background-color:#72AD21;
+    color:#fff;
+    padding:8px;
+    text-align:center;
+}
 
 
 /* About Section */
