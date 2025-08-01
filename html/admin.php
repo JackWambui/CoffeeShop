@@ -1,0 +1,118 @@
+<?php
+  session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Center</title>
+    <link rel="stylesheet" href="../css/styles.css">
+   <link rel="stylesheet" href="../css/createAccount.css">
+    <link rel="stylesheet" href="../css/adminAccount.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Add this in your HTML head -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  </head>/
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">
+                    <img src="../images/logo.jpeg" alt="A Cup of Inspiration">
+                </a>
+            </div>
+            <ul class="nav-links">
+           
+                
+
+                <li class="dropdown">
+                    <button class="dropbtn">
+                      <?php 
+                          if(isset($_SESSION["username"])){
+                            echo ucwords($_SESSION["username"]);
+                            }
+                      ?>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="../html/adminLogout.php">Logout</a>
+                    </div>
+                </li>
+
+              
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+
+        
+    </header>
+     <div class="content-wrapper">
+<?php
+  if(isset($_SESSION["username"])){
+    echo "
+     <div class='sidenav'>
+        <a href='../html/AddNewEmployee.html'>Manage Employees</a>
+        <a href='../html/adminCustomer.html'>Manage Customers</a>
+        <a href='../html/adminCategory.html'>Manage Categories</a>
+        <a href='../html/Adminproducts.html'>Manage Products</a>
+        <a href='../html/adminOrders.html'>Manage Orders</a>
+        <a href='../html/adminFeedback.html'>Feedback</a>
+     </div>
+     <div class='main'>
+      <h1>Admin Control Center</h1>
+        <div class='grid-container'>
+          <a href='../html/AddNewEmployee.html' class='card'>
+            <i class='fas fa-users'></i><p>Manage Employees</p>
+          </a>
+          <a href='../html/adminCustomer.html' class='card'>
+            <i class='fas fa-user-friends'></i><p>Manage Customers</p>
+          </a>
+          <a href='../html/adminCategory.html' class='card'>
+            <i class='fas fa-shapes'></i><p>Manage Categories</p>
+          </a>
+          <a href='../html/Adminproducts.html' class='card'>
+            <i class='fas fa-box-open'></i><p>Manage Products</p>
+          </a>
+          <a href='../html/adminOrders.html' class='card'>
+            <i class='fas fa-box'></i><p>Orders</p>
+          </a>
+          <a href='../html/adminFeedback.html' class='card'>
+            <i class='fas fa-comment-dots'></i><p>Feedback</p>
+          </a>
+        </div>
+
+      </div>
+     </div>
+    ";
+  }else{
+    echo "You have no permissions.Please contact Administrator";
+  }
+?>
+  <footer class="footer">
+      <div class="social-links">
+          <h3>Follow us:</h3>
+          <div class="icons">
+              <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/"  target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://x.com/"  target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+      </div>
+      <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="copyright">
+          <p>Copyright &copy; 2025 A Cup of Inspiration</p>
+      </div>
+  </footer>
+  <script src="../javascript/script.js"></script>
+</body>
+</html>
