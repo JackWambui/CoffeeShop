@@ -74,8 +74,8 @@ async function postCustomerInfor(){
     // for(let key in responseData){
     //     alert(responseData[key]);
     // }
-    window.location.href ="../html/signIn.html";
-
+    // window.location.href ="../html/signIn.html";
+    window.location.href ="../html/customerSignIn.html";
 }
 
 btnSignupBtn.addEventListener("click",handleCustomerInformation);

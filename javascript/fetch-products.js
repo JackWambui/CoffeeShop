@@ -75,10 +75,11 @@ function displayProductDetailsinDOM(product){
     productDivElement.setAttribute("data-id",productId);
     productDivElement.classList.add("card","js-card-test");
     productsContainer.append(productDivElement);
+    let imagePathCheck = productImage.includes("https");
     productDivElement.innerHTML = `
     <div class=card-header>
         <a href="">
-            <img src="${productImage}" alt="${productName}">
+             <img src="${imagePathCheck ? productImage : '../images/'+productImage}" alt="${productName}">
         </a>
     </div>
     <div class=card-body>
@@ -93,7 +94,7 @@ function displayProductDetailsinDOM(product){
                 Ratings ${productRating} / 5
             </p>
         </div>
-        <a href="specificProductsDetails.html?id=${productId}&product-name=${productName}" class="btn btn-primary view-more-btn">
+        <a href="specificProductsDetails.php?id=${productId}&product-name=${productName}" class="btn btn-primary view-more-btn">
             View More
         </a>
     </div>

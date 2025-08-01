@@ -97,6 +97,8 @@ const shoppingCartLocalStorage = getShoppingCartDetails();
 
 async function processOrder(){
     try{
+         const customerIDApp = parseInt(document.querySelector(".js_customer_id").getAttribute("data-id"),10);
+         console.log(customerIDApp);
          const orderedItems = shoppingCartLocalStorage;
          const clientOrdersUrl = "../php/clientOrders.php";
          const orderTable = document.querySelector(".js-table");
@@ -106,7 +108,9 @@ async function processOrder(){
          // console.log("Selected Option is",selectedPaymentOption);
          for(let rows = 0;rows < orderedItems.length; rows++){
             orderedItems[rows].modeOfPayment = selectedPaymentOption;
+            orderedItems[rows].customerId = customerIDApp;
          }
+         console.log(orderedItems);
         //  console.log(orderedItems);
          const orderResponse = await fetch(clientOrdersUrl,{
             method:"POST",

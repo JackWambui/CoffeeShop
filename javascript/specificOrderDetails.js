@@ -75,12 +75,13 @@ async function displayOrdersItemsDetails(){
        let jsOrderCreatedAt = order.order_created_at;
        const orderTableRow = document.createElement("tr");
        orderTableRow.setAttribute("order_id",jsOrderID);
+        let imagePathCheck = jsProductImage.includes("https");
        orderTableRow.innerHTML = `
             <td>
                 ${index += 1}
             </td>
             <td>
-                <img src="${jsProductImage}" alt="${jsProductName}">
+                <img src="${imagePathCheck ? jsProductImage : '../images/'+jsProductImage}" alt="${jsProductName}">
             </td>
             <td>
                 ${jsProductName}

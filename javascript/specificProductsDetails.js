@@ -28,10 +28,11 @@ async function displaySpecificProductInformation(){
         productDivElem.classList.add("product-infos","flex-container");
         productDivElem.setAttribute("data-id",prod.id);
         productSpecifics.append(productDivElem);
+        let imagePathCheck = productImage.includes("https");
         productDivElem.innerHTML = `
             <div class="card-section-1 flex-container">
                 <div class=card-image-holder>
-                    <img src="${productImage}" alt="${productName}" class="js-product-image">
+                    <img src="${imagePathCheck ? productImage : '../images/'+productImage}" alt="${productName}" class="js-product-image">
                 </div>
                 <div class=card-info-holder>
                     <h1 class=js-product-title>

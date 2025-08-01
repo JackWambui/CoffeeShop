@@ -1,8 +1,9 @@
 async function getOrdersDetails(){
 
     try{
+        const customerIdentity = parseInt(document.querySelector(".js_customer_id").getAttribute("data-id"),10);
         const ordersURLLink = "../php/fetchOrdersDetails.php";
-        let customerID = 1;
+        let customerID = customerIdentity;
         // const urlSearchParam = new URLSearchParams(customerID);
         // console.log(`${ordersURLLink}?customerID=${customerID}`);
         const response = await fetch(`${ordersURLLink}?customerID=${customerID}`,{
@@ -61,7 +62,7 @@ async function displayOrdersDetails(){
     ordertableBody.classList.add("js_orders_table_body");
     tableElement.append(ordertableBody);
 
-    orders.forEach(function(order){
+    orders.forEach(function(order,index){
        let jsOrderID        = order.orderID;
        let jsOrderNumber    = order.orderNumber;
        let jsOrderStatus    = order.orderStatus;
@@ -70,7 +71,7 @@ async function displayOrdersDetails(){
        orderTableRow.setAttribute("order_id",jsOrderID);
        orderTableRow.innerHTML = `
             <td>
-                ${jsOrderID}
+                ${index+=1}
             </td>
             <td>
                 ${jsOrderNumber}
@@ -82,7 +83,7 @@ async function displayOrdersDetails(){
                 ${jsOrderCreatedAt}
             </td>
             <td>
-                <a href="../html/specificOrderDetails.html?order_id=${jsOrderID}&order_number=${jsOrderNumber}" class="js-btn-primary">
+                <a href="../html/specificOrderDetails.php?order_id=${jsOrderID}&order_number=${jsOrderNumber}" class="js-btn-primary">
                     View More
                 </a>
             </td>
